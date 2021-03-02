@@ -218,15 +218,18 @@ section.dev .cel-image {
   text-align: center;
   flex-direction: column;
 }
+.vantagem img{
+  margin: 0 auto;
+}
 .vantagem h2{
 	color: #737373;
 	font-size: 20px;
 	font-weight: normal;
-	margin-bottom: 8px;
+	margin: 10px;
 }
 
 .vantagem p{
-	color: #b4b4b4;
+	color: #949494;
 	font-size: 20px;
 }
 
@@ -246,14 +249,30 @@ section.dev .cel-image {
 }
 
 /************* SLICK DOTS ***************/
-.selector {
-	cursor: pointer;
-	width: 16px;
-	height: 16px;
-	border-radius: 8px;
-	background-color: #d8d8d8; /*#688293 rgb(104,130,147)*/
-	margin: auto 7px;
+
+.slick-dots {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
 }
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  padding: 5px;
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  background-color: #d8d8d8;
+  margin: 0px 10px;
+}
+.slick-dots .slick-active button{
+  background-color: #688293;
+}
+
 
 /**** TIME / COLABORES *****/
 section.time {

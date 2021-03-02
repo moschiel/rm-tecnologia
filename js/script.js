@@ -12,7 +12,11 @@ function checkMenuDisplay() {
   if($(window).width() > 760 && menuMobile.css('display') != 'none') {
     menuMobile.css('display', 'none');
   }
-} 
+}
+
+$(window).resize(()=>{
+  checkMenuDisplay();
+});
 
 //envento para scroll automatico ao clicar em link do menu
 $('nav a').click(function(e){
@@ -24,73 +28,88 @@ $('nav a').click(function(e){
 
 });
 
-/********************** COLABORADOR SLIDER EVENTS ****************************/
-var scrollContainer = $('.scrollColaboradores');
-var colaboradores = $('.colaborador');
-var offsetXcolaborador = [];
-var seletores = $('.bullets .bolinha');
-var curSlideIndex = 0;
 
-seletores.click( (e) => { 
-  curSlideIndex = seletores.index( $(e.target) ); //index de quem foi clicado
-  shiftSlider(curSlideIndex);
-  autoPlaySlider(curSlideIndex);
- });
 
-function calculaSliderOffsets() {
-  offsetXcolaborador = [];
-  for(let i=0; i<colaboradores.length; i++){
-    offsetXcolaborador.push(
-      colaboradores.eq(i).offset().left - scrollContainer.offset().left
-    )
-  }
-}
+/******************** vantagem **********************/
+const cor_ativo = "#688293";
+const cor_inativo = "#d8d8d8";
+selector_visibility_breakpoint = 1000
 
-var sliderPlayerInterval;
+$(function() {
 
-function autoPlaySlider(optionalIndex) {
-  if(sliderPlayerInterval){ //se timer 'setInterval' ja estava criado, deletamos
-    clearInterval(sliderPlayerInterval);
-  }
+  let vantagensContainer = $('.vantagens .all-vantagens');
+  let selectorContainer = $(".vantagens-selector");
+  let vantagensColum =  $(".vantagem");
 
-  if(optionalIndex){ //seta index atual para rodar o autoPlay, [opcional]
-    curSlideIndex = optionalIndex;
-  }
+  //carrega seletores dinamincamente
+  vantagensColum.each( function(){
+    selectorContainer.append('<div class="selector"></div>');
+  });
 
-  sliderPlayerInterval = setInterval(() => {  
-    curSlideIndex++;
-    if(curSlideIndex == colaboradores.length) {
-      curSlideIndex = 0;
+  let seletores = $('.vantagens .selector');
+  
+  function setVantagensDisplay() {
+    let width = $(window).width();
+
+    if(width <= selector_visibility_breakpoint){
+      seletores.css('display', 'block');
     }
-    shiftSlider(curSlideIndex);
-  }, 5000);
-}
+    else{
+      seletores.css('display', 'none');
+    }
+  }
 
-const active_color = '#999999';
-const inactive_color = '#c8c8c8';
+  setVantagensDisplay();
 
-function shiftSlider(index){
-  scrollContainer.animate({scrollLeft: offsetXcolaborador[index]}, 700);
-  seletores.css('background-color', inactive_color);
-  seletores.eq(index).css('background-color', active_color);
-}
+  $(window).resize(()=>{
+    setVantagensDisplay();
+  });
 
-function resetSliderPosition() {
-  curSlideIndex = 0;
-  shiftSlider(0);
-}
+  vantagensContainer.slick({
+    dots: true,
+    infinite: true,
+    prevArrow: false,
+    nextArrow: false,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    speed: 700,
+    slidesToShow: 4,
+    slidesToScroll: 1,
 
-function initSliderColaborador(){
-  calculaSliderOffsets();
-  resetSliderPosition()
-  autoPlaySlider();
-}
+    responsive: [
+      {
+        breakpoint: selector_visibility_breakpoint,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 770,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ]
+  });
 
-//Incializa auto play
-initSliderColaborador();
+  vantagensContainer.on('beforeChange', function (slick, currentSlide) {  
+    let slideIndex = vantagensContainer.slick('slickCurrentSlide');
+    seletores.css('background-color', cor_inativo);
+    seletores.eq(slideIndex).css('background-color', cor_ativo);
+  });
 
-/*************** WINDOW RESIZE EVENTS ************/
-$(window).resize(function () { 
-  checkMenuDisplay();
-  initSliderColaborador();
-});
+})
+
+

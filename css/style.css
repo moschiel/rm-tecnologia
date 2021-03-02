@@ -14,8 +14,9 @@ button {
 }
 
 .center {
-  max-width: 1280px;
   width: 100%;
+	margin: 0 auto;
+	max-width: 1440px;
 }
 
 .button {
@@ -182,27 +183,76 @@ section.dev .cel-image {
   margin-top: -40px;
 }
 
-/******** SECTION PESSOAS ********/
-section.pessoas {
-  width: 100%;
+
+/************** VANTAGENS ***********/
+.vantagens{
+	/* border: 2px solid red; */
+	margin-top: 80px;
+}
+.container-vantagens{
+	padding-left: 40px;
+	padding-right: 40px;
+}
+.container-vantagens > h2{
+	/* border: 2px solid blue; */
+	text-align: center;
+	font-weight: normal;
+	color: #698293;
+	font-size: 25px;
+	text-transform: uppercase;
+	height: 80px;	
+}
+.all-vantagens{
+	/* border: 4px solid purple; */
+	display: flex;
+}
+/*FOR DEBUG */
+/* .vantagem{
+	border: 2px solid yellow;
+} */
+.vantagem{
+  padding: 0px 20px;
+	padding-bottom: 35px;
+	/* padding-right: 10px; */
   display: flex;
-  justify-content: center;
-}
-
-.pessoas-container {
-  padding: 30px 0 50px;
   text-align: center;
+  flex-direction: column;
+}
+.vantagem h2{
+	color: #737373;
+	font-size: 20px;
+	font-weight: normal;
+	margin-bottom: 8px;
 }
 
-.pessoas-container h2 {
-  color: #472663;
-  font-weight: 300;
-  margin-bottom: 30px;
+.vantagem p{
+	color: #b4b4b4;
+	font-size: 20px;
 }
 
-.pessoas-container p {
-  margin: auto 100px;
-  line-height: 2;
+.vantagens-selector{
+	/* border: 2px solid orange; */
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+}
+
+.vantagens-selector > .selector{
+	margin: auto 7px;
+	/* display: none; feito via javascript */
+}
+.vantagens-selector > .selector:first-child{
+	background-color: #688293;
+}
+
+/************* SLICK DOTS ***************/
+.selector {
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	border-radius: 8px;
+	background-color: #d8d8d8; /*#688293 rgb(104,130,147)*/
+	margin: auto 7px;
 }
 
 /**** TIME / COLABORES *****/

@@ -48,8 +48,23 @@ header {
   justify-content: space-between; /* horizontal */
 }
 
-.head-container .logo {
+/* .head-container .logo {
   width: 180px;
+  margin-bottom: 5px;
+} */
+
+.head-container .logo p:first-child {
+  color: white;
+  font-size: 60px;
+  font-weight: bold;
+  /* width: 180px; */
+  text-align: center;
+}
+.head-container .logo p:last-child {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  /* width: 180px; */
   margin-bottom: 5px;
 }
 
@@ -220,6 +235,7 @@ section.dev .cel-image {
 }
 .vantagem img{
   margin: 0 auto;
+  width: 120px;
 }
 .vantagem h2{
 	color: #737373;
@@ -402,11 +418,11 @@ section.contato .center {
 }
 
 .form-container {
-  width: 50%;
+  width: 40%;
 }
 
 .form-container form {
-  width: 75%;
+  width: 100%;
   color: white;
 }
 
@@ -461,6 +477,11 @@ footer > .center {
 
 footer .center p {
   color: white;
+}
+
+footer #credits a{
+  text-decoration: none;
+  color: inherit;
 }
 
 /******* SCREEN <= 800px ********/

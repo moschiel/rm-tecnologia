@@ -484,6 +484,18 @@ footer #credits a{
   color: inherit;
 }
 
+/******* SCREEN <= 1200px ********/
+@media screen and (max-width: 1200px) {
+  footer div{
+    display: flex;
+    flex-direction: column;
+  }
+  footer div p {
+    text-align: center;
+    width: 100%;
+  }
+}
+
 /******* SCREEN <= 800px ********/
 @media screen and (max-width: 800px) {
   .head-text {

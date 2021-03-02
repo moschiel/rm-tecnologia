@@ -60,6 +60,7 @@ nav.desk-menu ul {
 
 nav.desk-menu li {
   margin: auto 20px;
+  /*font-size: 20px;*/
 }
 
 nav.desk-menu a {
@@ -122,7 +123,7 @@ nav.mobile-menu a {
 
 .head-text p {
   width: 90%;
-  font-size: 16px;
+  font-size: 22px;
 }
 
 /***** SECTION DEV *****/
@@ -141,14 +142,14 @@ section.dev .dev-text {
 section.dev .dev-container {
   float: right;
   margin-right: -50px;
-  width: 400px;
+  width: 500px;
   color: white;
   font-weight: normal;
 }
 
 section.dev .dev-text h2 {
   text-transform: capitalize;
-  font-size: 25px;
+  font-size: 30px;
   font-weight: 100;
   margin-bottom: 20px;
 }
@@ -160,10 +161,11 @@ section.dev a {
 
 section.dev .dev-text ul {
   margin: 5px 0 20px;
+  font-size: 20px;
 }
 
 section.dev .dev-text ul li {
-  padding: 5px 0;
+  padding: 10px 0;
   list-style-position: inside;
 }
 

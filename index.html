@@ -150,14 +150,19 @@
   <section class="contato" id="contato">
     <div class="center">
       <div class="form-container">
-        <form action="index.html">
+
+
+        <form action="envia-email.php" method="post">
           <h2>Entre em contato</h2>
           <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam scelerisque lobortis iaculis. In hac habitasse platea dictumst. Cras vitae purus metus.</p> -->
-          <input type="text" name="nome" placeholder="Nome*" required/>
+          <input type="text" name="name" placeholder="Nome*" required/>
           <input type="email" name="email" placeholder="Email*" required/>
-          <textarea name="mensagem" id="" cols="30" rows="6" placeholder="Mensagem*"></textarea>
-          <input class="button" type="submit" name="acao" value="ENVIAR"></input>
+          <textarea name="message" id="" cols="30" rows="6" placeholder="Mensagem*" required></textarea>
+          <input type="submit" value="Enviar" class="button"/>
         </form>
+
+
+
       </div><!--"form-container"--> 
       <!-- <div class="map">
 				<h2>Faça uma visita</h2>

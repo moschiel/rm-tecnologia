@@ -204,10 +204,12 @@ section.dev .cel-image {
 	/* border: 2px solid red; */
 	margin-top: 80px;
 }
+
 .container-vantagens{
 	padding-left: 40px;
 	padding-right: 40px;
 }
+
 .container-vantagens > h2{
 	/* border: 2px solid blue; */
 	text-align: center;
@@ -430,6 +432,7 @@ form h2 {
   font-size: 23px;
   font-weight: 300;
 }
+
 form p {
   font-size: 15px;
   font-weight: 300;
@@ -443,6 +446,26 @@ form textarea {
   margin: 3px auto;
   padding: 15px 10px;
 }
+
+input.invalid, textarea.invalid{
+	border: 2px solid red;
+}
+
+input.valid, textarea.valid{
+	border: 2px solid green;
+}
+
+.error{
+	display: none;
+	margin-left: 10px;
+}		
+
+.error_show{
+	color: red;
+	margin-left: 10px;
+}
+
+
 
 .map {
   width: 50%;

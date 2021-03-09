@@ -150,11 +150,23 @@ nav.mobile-menu a {
 .all-vantagens {
   display: flex;
   margin-top: 40px;
+  flex-direction: column;
 }
 
-.all-vantagens div {
+
+/* ----------SLICK SLIDE------------ */
+.slick-track{
   height: 100%;
 }
+
+.slick-slide{
+  height: 100%;
+}
+
+.slick-slide div{
+  height: 100%;
+}
+/* ---------------------- */
 
 .vantagem {
   padding: 25px 20px;

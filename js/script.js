@@ -104,7 +104,10 @@ $(function () {
     seletores.css("background-color", cor_inativo);
     seletores.eq(slideIndex).css("background-color", cor_ativo);
   });
-  // });
+
+});
+
+
 
   // // Validate, Prevent and set empty value in fields if successful
   // $(document).ready(function () {
@@ -161,6 +164,8 @@ $(function () {
   //     }
   //   });
 
+
+
   // $("form").submit(function (e) {
   //   e.preventDefault();
 
@@ -175,4 +180,3 @@ $(function () {
   //     $('textarea[name="message"]').val("").trigger('change');
   //   });
   // });
-});

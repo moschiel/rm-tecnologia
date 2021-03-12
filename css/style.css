@@ -118,22 +118,31 @@ nav.mobile-menu a {
 /* <!--HEADER TEXT --> */
 .head-text {
   color: white;
+  /* 
   width: 650px;
   float: right;
   margin-right: 105px;
-  margin-top: 150px;
+  margin-top: 150px; */
+
+  border: 1px solid red;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
 }
 
 .head-text h2 {
   margin-bottom: 20px;
-  font-size: 4em;
+  /* font-size: 4em; */
   font-weight: 900;
+  font-size: clamp(3rem, 4vw, 4rem); 
 }
 
 .head-text p {
-  width: 90%;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
+  border: 1px solid orange;
   font-weight: 400;
+  font-size: clamp(1.3rem, 2vw, 1.5rem); 
 }
 
 /************** VANTAGENS ***********/
@@ -153,17 +162,16 @@ nav.mobile-menu a {
   flex-direction: column;
 }
 
-
 /* ----------SLICK SLIDE------------ */
-.slick-track{
+.slick-track {
   height: 100%;
 }
 
-.slick-slide{
+.slick-slide {
   height: 100%;
 }
 
-.slick-slide div{
+.slick-slide div {
   height: 100%;
 }
 /* ---------------------- */
@@ -215,7 +223,6 @@ nav.mobile-menu a {
 
 .vantagens-selector > .selector {
   margin: auto 7px;
-  /* display: none; feito via javascript */
 }
 .vantagens-selector > .selector:first-child {
   background-color: #688293;
@@ -438,135 +445,4 @@ footer p.credits a {
   color: inherit;
   font-size: 0.7rem;
   text-transform: lowercase;
-}
-
-/******* SCREEN <= 1200px ********/
-@media screen and (max-width: 1200px) {
-  footer div {
-    display: flex;
-    flex-direction: column;
-  }
-  footer div p {
-    text-align: center;
-    width: 100%;
-  }
-}
-
-/******* SCREEN <= 800px ********/
-@media screen and (max-width: 800px) {
-  .head-text {
-    width: 100%;
-    float: unset;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* vertical */
-    justify-content: center;
-  }
-
-  .head-text h2 {
-    text-align: center;
-    font-size: 30px;
-  }
-
-  .head-text p {
-    text-align: center;
-  }
-}
-
-/******* SCREEN >= 761px ********/
-@media screen and (min-width: 761px) {
-  /* UL visivel */
-  .head-container ul {
-    /* visibility: visible; */
-    display: flex;
-  }
-
-  /* MENU escondido */
-  .head-container img.menu {
-    /* visibility: hidden; */
-    display: none;
-  }
-}
-
-/******* SCREEN <= 760px ********/
-@media screen and (max-width: 760px) {
-  /* desktop menu escondido */
-  nav.desk-menu {
-    /* visibility: hidden; */
-    display: none;
-  }
-
-  /* icon menu visivel */
-  .head-container img.menu {
-    /* visibility: visible; */
-    display: static;
-    cursor: pointer;
-  }
-
-  /* <!--aprensentar o menu mobile--> */
-  /* img.menu:hover + nav.mobile-menu {
-    opacity: 1; 
-  }
-
-  nav.mobile-menu:hover {
-    opacity: 1;
-  } */
-
-  /***** SECTION DEV *****/
-  section.dev .dev-text {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  section.dev .cel-container {
-    /* visibility: hidden; */
-    display: none;
-  }
-
-  section.dev .dev-text .dev-container {
-    margin: 40px 0;
-    text-align: center;
-  }
-
-  section.dev .dev-text .dev-container ul {
-    text-align: left;
-    padding-left: 35%;
-  }
-
-  .pessoas-container p {
-    margin: auto 15px;
-    text-align: justify;
-  }
-
-  /******** SECTION PESSOAS ********/
-  section.time {
-    flex-wrap: wrap;
-  }
-
-  .colaborador,
-  section.time .time-text,
-  section.time .esquerda {
-    width: unset;
-    max-width: unset;
-    padding: unset;
-  }
-
-  section.time .direita {
-    width: 100%;
-  }
-
-  section.time .esquerda,
-  .colaborador,
-  .time-text {
-    padding: 40px;
-  }
-
-  /******* CONTATO ********/
-
-
-  /******* FOOTER ********/
-  footer > .center {
-    padding: 40px 20px;
-  }
 }

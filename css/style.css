@@ -23,10 +23,9 @@ button {
 }
 
 .center {
-  /* width: 100%;
+  width: 100%;
   margin: 0 auto;
-  max-width: 1150px; */
-  /* padding: 0 10px; */
+  max-width: 1150px;
 }
 
 /************HEADER *******/
@@ -149,7 +148,7 @@ nav.mobile-menu a {
   font-size: clamp(1.3rem, 2vw, 1.5rem);
 }
 
-/************** VANTAGENS ***********/
+/************** SECTION VANTAGENS ***********/
 .vantagens {
   padding: 70px 0 100px 0;
 }
@@ -166,7 +165,7 @@ nav.mobile-menu a {
   flex-direction: column;
 }
 
-/* ----------SLICK SLIDE------------ */
+/* ----------VANTANGES SLICK SLIDE------------ */
 .slick-track {
   height: 100%;
 }
@@ -178,14 +177,13 @@ nav.mobile-menu a {
 .slick-slide div {
   height: 100%;
 }
-/* ---------------------- */
-
+/* ----------- VANTANGEM BOX ----------- */
 .vantagem {
   padding: 25px 20px;
   display: flex;
   text-align: center;
   flex-direction: column;
-  width: 300px;
+  /* width: 500px; */
   border: 1px solid #ccc;
   min-height: 300px;
 }
@@ -332,25 +330,30 @@ section.contact {
   flex-direction: column;
   text-align: center;
   padding: 70px 0 100px;
+  border: 2px solid green;
 }
 
 .contact--container {
   display: flex;
   flex-direction: column;
+  border: 2px solid green;
 }
 
-.contact--container > h2 {
-  font-weight: 900;
-  font-size: 2.5rem;
-  margin: 20px 0 40px 0;
-}
 
-.contact--container div {
+.contact--container > div {
   display: flex;
+  justify-content: space-around;
+  border: 2px solid red;
 }
 
 .contact--container__text{
   width: 50%;
+  border: 2px solid green;
+}
+.contact--container__text > h2 {
+  font-weight: 900;
+  font-size: 2.5rem;
+  /* margin: 20px 0 40px 0; */
 }
 
 .contact--container__form{
@@ -359,6 +362,7 @@ section.contact {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  border: 2px solid blue;
 }
 
 .contact--container__form form{
@@ -441,6 +445,7 @@ footer {
   background-color: #20112c;
   display: flex;
   justify-content: center;
+  display: none;
 }
 
 footer > .center {
@@ -467,21 +472,21 @@ footer p.credits a {
 
 @media screen and (max-width: 850px) {
   /***** SECTION DEV *****/
-  /* section.dev {
+  section.dev {
     flex-direction: column;
     padding-top: 70px;
     padding-bottom: 70px;
     padding-left: 10px;
     padding-right: 10px;
-  } */
+  }
 
   /***** SECTION DEV IMAGE *****/
-  /* section.dev .cel-container {
+  section.dev .cel-container {
     display: none;
-  } */
+  } 
 
   /***** SECTION DEV TEXT *****/
-  /* section.dev .dev-text {
+  section.dev .dev-text {
     width: 100%;
     margin: 0px;
   }
@@ -495,10 +500,10 @@ footer p.credits a {
   section.dev .dev-list {
     width: fit-content;
     margin: 0 auto;
-  } */
+  }
 
   /***** SECTION CONTATO *****/
-  /* .contact--container div {
+  .contact--container div {
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -507,55 +512,39 @@ footer p.credits a {
   .contact--container__text{
     margin-bottom: 40px;
   }
-   */
 }
 
-@media screen and (min-width: 515px) and (max-width: 750px) {
-  /* .head-text h2,
+@media screen and (max-width: 750px) {
+  .head-text h2,
   .head-text p {
     width: 500px;
-  } */
+  }
 }
 
 @media screen and (max-width: 514px) {
-  /* 
-  .navigation img {
-    display: block;
-  }
-
   nav.desk-menu {
     display: none;
   }
-
+  .navigation img {
+    display: block;
+  }
   .head-text {
     width: 100%;
     padding: 0 10px;
   }
-
   .head-text h2 {
     text-align: center;
     width: 100%;
   }
-
   .head-text p {
     text-align: center;
     width: 100%;
   }
-  */
 
   /********SECTION DEV-TEXT ****/
-  /* section.dev .dev-list {
+  section.dev .dev-list {
     width: 80%;
-  } */
-
-  /***** SECTION VANTAGENS *****/
-  /* .all-vantagens {
-    padding: 10px;
-  }
-
-  .bckg-img-up {
-    display: none;
-  } */
+  } 
 
   /***** SECTION CONTATO *****/
   /*.contact--container div {

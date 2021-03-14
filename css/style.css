@@ -184,6 +184,7 @@ nav.mobile-menu a {
   flex-direction: column;
   width: 300px;
   border: 1px solid #ccc;
+  min-height: 300px;
 }
 
 .vantagem svg {

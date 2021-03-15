@@ -428,10 +428,12 @@ button {
 
 /* classes de validação de formulario */
 .valid {
-  border: 2px solid green;
+  color: black;
+  background-color: white;
 }
-.invalid {
-  border: 2px solid red;
+.invalid  {
+  color: red;
+  background-color: rgb(255, 150, 150);
 }
 
 /******* FOOTTER  ********/

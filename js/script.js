@@ -1,4 +1,4 @@
-//$(document).ready(function () {
+$(document).ready(function () {
   /********************** MENU EVENTS ****************************/
   let menuIcon = $("img.menu");
   let menuMobile = $(".mobile-menu");
@@ -70,79 +70,96 @@
     });
   });
 
-  //eventos de validação do formulario
+  //eventos pra limpar validação do formulario ao digitar no input
   $('input[name="name"]').on("input", function () {
-    console.log("AQUI");
     let input = $(this);
 
-    if ( input.val().match('^[a-zA-Z]{3,16}$') ) {
-      //console.log( "Valid name" );
+    if ( input.val().match('^[a-zA-Z ]{3,30}$') ) {
       input.removeClass("invalid").addClass("valid");
     } else {
-      //console.log("That's not a name");
-      input.removeClass("valid").addClass("invalid");
+      //input.removeClass("valid").addClass("invalid");
     }
   });
-//});
+  $('input[name="email"]').on("input", function () {
+    let input = $(this);
 
-
-  // // Validate, Prevent and set empty value in fields if successful
-  // $(document).ready(function () {
-
-
-  //   $('textarea[name="message"]').keyup(function (event) {
-  //     let input = $(this);
-  //     let message = $(this).val();
-  //     if (message) {
-  //       input.removeClass("invalid").addClass("valid");
-  //     } else {
-  //       input.removeClass("valid").addClass("invalid");
-  //     }
-  //   });
-
-  //   $(".button").click(function (event) {
-  //     let form_data = $("form").serializeArray();
-  //     let error_free = true;
-  //     for (let input in form_data) {
-  //       let element = $(form_data[input]["name"]);
-  //       let valid = element.hasClass("valid");
-  //       let error_element = $("span", element.parent());
-  //       if (!valid) {
-  //         error_element.removeClass("error").addClass("error_show");
-  //         error_free = false;
-  //       } else {
-  //         error_element.removeClass("error_show").addClass("error");
-  //       }
-  //     }
-  //     if (!error_free) {
-  //       event.preventDefault();
-  //     } else {
-  //       console.log("No errors: Form will be submitted");
-  //     }
-  //   });
-
-//Prevent Default do formulario
-$("form").submit(function (e) {
-  console.log("PREVENT DEFAULT");
-  e.preventDefault();
-  // Serialize data
-  var formData = $(this).serialize();
-  console.log("Ajax Request: ", formData);
-
-  return;
-
-  // Make AJAX request
-  $.post("envia-email.php", formData)
-  .done(function () {
-    //limpa formulario
-    $('input[name="name"]').val("");
-    $('input[name="email"]').val("");
-    $('textarea[name="message"]').val("");
-    //exibe mensagem de sucesso
-    alert('Mensagem enviada com sucesso');
-  })
-  .fail( function() {
-    //exibe mensagem de erro
-    alert('Erro no envio da mensagem!');
+    if ( input.val().match('^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$') ) {
+      input.removeClass("invalid").addClass("valid");
+    } else {
+      //input.removeClass("valid").addClass("invalid");
+    }
   });
+  $('textarea[name="message"]').keyup(function (event) {
+    let input = $(this);
+    let message = $(this).val();
+    if (message) {
+      input.removeClass("invalid").addClass("valid");
+    } else {
+      //input.removeClass("valid").addClass("invalid");
+    }
+  });
+
+  //função de validação
+  function validate() {
+    let name = $('input[name="name"]');
+    let email = $('input[name="email"]');
+    let cell = $('input[name="cell"]');
+    let message = $('textarea[name="message"]');
+
+    if ( !name.val().match('^[a-zA-Z ]{3,30}$') ) {
+      name.removeClass("valid").addClass("invalid");
+      alert("Erro: nome inválido");
+      return false;
+    }
+    const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if ( !regex.test(email.val())) {
+      email.removeClass("valid").addClass("invalid");
+      alert("Erro: email inválido");
+      return false;
+    }
+    if ( !cell.val().match('/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im') ) {
+      cell.removeClass("valid").addClass("invalid");
+      alert("Erro: telefone inválido");
+      return false;
+    }
+    if( message.val() == "") {
+      alert("Erro: preencha a mensagem por favor");
+      message.removeClass("valid").addClass("invalid");
+      return false;
+    }
+
+    return true;
+  }
+
+
+  //evento Prevent Default do formulario
+  $("form").submit(function (e) {
+    console.log("PREVENT DEFAULT");
+    e.preventDefault();
+    // Serialize data
+    var formData = $(this).serialize();
+    console.log("Ajax Request: ", formData);
+
+    if(!validate()) {
+      return;
+    }
+    //return;
+
+    // Make AJAX request
+    $.post("enviar-email.php", formData)
+    .done(function () {
+      //limpa formulario
+      $('input[name="name"]').val("");
+      $('input[name="email"]').val("");
+      $('input[name="cell"]').val("");
+      $('textarea[name="message"]').val("");
+      //exibe mensagem de sucesso
+      alert('Mensagem enviada com sucesso');
+    })
+    .fail( function() {
+      //exibe mensagem de erro
+      alert('Erro no envio da mensagem!');
+    });
+  });
+
 });

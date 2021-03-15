@@ -421,6 +421,21 @@ form input:hover {
   border: 2px solid #703b9b;
 }
 
+button {
+  width: 200px;
+  height: 50px;
+}
+
+/* classes de validação de formulario */
+.valid {
+  color: black;
+  background-color: white;
+}
+.invalid  {
+  color: red;
+  background-color: rgb(255, 150, 150);
+}
+
 /******* FOOTTER  ********/
 footer {
   background-color: #20112c;

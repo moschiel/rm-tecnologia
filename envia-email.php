@@ -3,8 +3,12 @@ $nome = addslashes($_POST['name']);
 $email = addslashes($_POST['email']);
 $message  = addslashes($_POST['message']);
 
-require("/home/usuario/diretoriodeinstalação/PHPMailer-master/src/PHPMailer.php");
-require("/home/usuario/diretoriodeinstalação/PHPMailer-master/src/SMTP.php");
+//echo $nome;
+//echo $email;
+//echo $message;
+
+require("/php/PHPMailer-master/src/PHPMailer.php");
+require("/php/PHPMailer-master/src/SMTP.php");
 
 $mail = new PHPMailer\PHPMailer\PHPMailer();
 $mail->IsSMTP(); // enable SMTP

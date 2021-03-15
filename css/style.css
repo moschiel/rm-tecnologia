@@ -326,110 +326,85 @@ section.dev .dev-list li {
 
 /******* CONTATO ********/
 section.contact {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* text-align: center; */
   padding: 70px 0 100px;
-  border: 2px solid green;
+  /* border: 2px solid yellow; */
 }
 
 .contact--container {
   display: flex;
-  flex-direction: column;
-  border: 2px solid green;
-}
-
-
-.contact--container > div {
-  display: flex;
   justify-content: space-around;
-  border: 2px solid red;
+  /* border: 5px solid red; */
+  padding: 0 10px;
 }
 
+/**** CONTATO TEXT***********/
 .contact--container__text{
-  width: 50%;
-  border: 2px solid green;
+  /* border: 5px solid green; */
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
+  flex-direction: column;
+  width: 33%;
+  /* padding-right: 10px; */
 }
 .contact--container__text > h2 {
-  font-weight: 900;
+  width: 100%;
   font-size: 2.5rem;
+  margin-bottom: 35px;
+  /* border: 2px solid blue; */
   /* margin: 20px 0 40px 0; */
 }
+.contact--container__text p {
+  margin: 5px 0px;
+}
 
+/**** CONTATO FORM ***********/
 .contact--container__form{
-  width: 512px;
-  display: flex;
+  width: 66%;
+  /* border: 5px solid blue; */
+  /* display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
-  border: 2px solid blue;
-}
-
-.contact--container__form form{
-  min-width: 512px;
-}
-
-.contact--container__text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.contact--container__text__tel {
-  margin-bottom: 60px;
-}
-
-.contact--container__text__tel,
-.contact--container__text__email {
-  flex-direction: column;
-}
-
-.contact--container__text__tel h2,
-.contact--container__text__email h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #703b9b;
-}
-
-.contact--container__text__tel p,
-.contact--container__text__email p {
-  font-weight: 400;
-  font-size: 1.2rem;
-  margin-top: 7px;
+  flex-direction: row; */
 }
 
 .contact--container__form form {
+  /* min-width: 512px; */
   width: 100%;
+  display: flex;
+  /* border: 5px solid yellow; */
 }
 
-form input[type="text"] {
-  margin-right: 16px;
+.contact--container__form form .dados {
+  /* border: 5px solid orange; */
+  width: 50%;
+  margin-right: 10px;
 }
 
-form input[type="text"],
-form input[type="email"] {
-  border: 2px solid #ccc;
-  width: 48%;
-  padding: 15px 10px;
-  font-size: 1.2rem;
-}
-
-form input[type="tel"] {
-  border: 2px solid #ccc;
+.contact--container__form form input{
   font-size: 1.2rem;
   width: 100%;
   padding: 15px 10px;
-  margin: 15px 0;
+  margin-bottom: 10px;
+  /* margin: 15px 0; */
 }
 
-form textarea {
-  padding: 15px 10px;
+form .label-message {
+  width: 50%;
+  margin-bottom: 10px;
+  /* padding: 15px 10px; */
+  /* border: 5px solid violet; */
+}
+
+form .label-message textarea {
   font-size: 1.2rem;
   width: 100%;
   resize: none;
-  width: 100%;
-  height: 200px;
+  height: 100%;
+  padding: 15px 10px;
   border: 2px solid #ccc;
 }
 
@@ -440,12 +415,23 @@ form input:hover {
   border: 2px solid #703b9b;
 }
 
+/******* BOTAO ********/
+.form-button {
+  width: 100%;
+  display: flex;
+  /* border: 2px solid green; */
+}
+.form-button button {
+  /* margin-right: 10px; */
+  width: 100%;
+}
+
 /******* FOOTTER  ********/
 footer {
   background-color: #20112c;
   display: flex;
   justify-content: center;
-  display: none;
+  padding: 0 20px;
 }
 
 footer > .center {
@@ -503,15 +489,22 @@ footer p.credits a {
   }
 
   /***** SECTION CONTATO *****/
-  .contact--container div {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  .contact--container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
   }
 
-  .contact--container__text{
+  .contact--container__text {
+    width: 85%;
     margin-bottom: 40px;
   }
+  
+  .contact--container__form {
+    width: 85%;
+  }
+
 }
 
 @media screen and (max-width: 750px) {
@@ -519,15 +512,28 @@ footer p.credits a {
   .head-text p {
     width: 500px;
   }
+
+
+  /******* FOOTTER  ********/
+
+  footer > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+  } 
 }
 
 @media screen and (max-width: 514px) {
   nav.desk-menu {
     display: none;
   }
+  
   .navigation img {
     display: block;
   }
+
   .head-text {
     width: 100%;
     padding: 0 10px;
@@ -545,41 +551,28 @@ footer p.credits a {
   section.dev .dev-list {
     width: 80%;
   } 
-
-  /***** SECTION CONTATO *****/
-  /*.contact--container div {
-    flex-direction: column;
-  }
-
+  
+  /********SECTION CONTATO ****/
   .contact--container__text {
-    width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
-  .contact--container__form {
-    width: 100%;
-  }
-
-  form input[type="text"],
-  form input[type="tel"],
-  form input[type="email"],
-  form textarea {
-    width: 100%;
-    margin: 0 0 15px 0;
-    font-size: 1rem;
-  }*/
-
-  /******* FOOTTER  ********/
-  /*
-  footer {
-    width: 100%;
-  }
-
-  footer > .center {
-    width: 100%;
-    display: flex;
+  .contact--container__form form{
     flex-direction: column;
-    text-align: center;
-    justify-content: space-between;
-  } */
+    width: 100%;
+  }
+  
+  .contact--container__form form .dados,
+  .contact--container__form form .label-message{
+    width: 100%;
+  }
+  
+  .contact--container__form form .label-message{
+    padding: 0px;
+  }
+
+  .contact--container__form form .dados input,
+  .contact--container__form form .label-message textarea{
+    font-size: 1rem;
+  }
 }

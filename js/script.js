@@ -82,13 +82,21 @@ $(document).ready(function () {
   });
   $('input[name="email"]').on("input", function () {
     let input = $(this);
-
-    if ( input.val().match('^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$') ) {
+    const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if ( regex.test(input.val()) ) {
       input.removeClass("invalid").addClass("valid");
     } else {
       //input.removeClass("valid").addClass("invalid");
     }
   });
+  // $('input[name="cell"]').on("input", function () {
+  //   let input = $(this);
+  //   if (input.val().match('/^[\+]?[(]?[0-9]{2}[)]?[-\s\.]?[0-9]{4,5}[-\s\.]?[0-9]{4}$/im') ) {
+  //     input.removeClass("invalid").addClass("valid");
+  //   } else {
+  //     input.removeClass("valid").addClass("invalid");
+  //   }
+  // });
   $('textarea[name="message"]').keyup(function (event) {
     let input = $(this);
     let message = $(this).val();
@@ -117,11 +125,11 @@ $(document).ready(function () {
       alert("Erro: email inválido");
       return false;
     }
-    if ( !cell.val().match('/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im') ) {
-      cell.removeClass("valid").addClass("invalid");
-      alert("Erro: telefone inválido");
-      return false;
-    }
+    // if ( !cell.val().match('/^[\+]?[(]?[0-9]{2}[)]?[-\s\.]?[0-9]{4,5}[-\s\.]?[0-9]{4}$/im') ) {
+    //   cell.removeClass("valid").addClass("invalid");
+    //   alert("Erro: telefone inválido");
+    //   return false;
+    // }
     if( message.val() == "") {
       alert("Erro: preencha a mensagem por favor");
       message.removeClass("valid").addClass("invalid");

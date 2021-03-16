@@ -47,9 +47,9 @@
           <img class="menu" src="./images/menu.png" alt="menu" />
           <nav class="mobile-menu">
             <ul>
-              <li><a href="index.html">home</a></li>
-              <li><a href="#servicos">serviços</a></li>
-              <li><a href="#contato">contato</a></li>
+              <li><a href="#home">home</a></li>
+              <li><a href="#service">serviços</a></li>
+              <li><a href="#contact">contato</a></li>
             </ul>
           </nav>
           <!--mobile-menu-->
@@ -224,17 +224,18 @@
 
     <section class="dev">
       <div class="dev-text">
-        <div class="dev-container">
-          <h2>desenvolvemos sistemas únicos</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim,
-            aperiam!
-          </p>
-          <p>
-            Expedita distinctio neque quo libero exercitationem natus laboriosam
-            animi vel?
-          </p>
-        </div>
+        <h2>desenvolvemos sistemas únicos</h2>
+        <!-- <div class="dev-container"> -->
+          <ul class="dev-list" >
+            <li>Consulta de dados em massa: </br>
+              <p>Receita Federal,</p> 
+              <p>Sintegra,</p> 
+            <p>Serasa e muito mais</p>
+            </li>
+            <li>Desenvolvimento e Integração de APIs</li>
+            <li>Automatização de processos diversos</li>
+          </ul>
+        <!-- </div> -->
         <!--dev-container-->
       </div>
       <!--dev-text-->
@@ -250,41 +251,43 @@
     <section class="contact" id="contact">
       <div class="center">
         <div class="contact--container">
-
-          
-          <h2>Contato</h2>
-          <div>
             <div class="contact--container__text">
-              <div class="contact--container__text__tel">
+              <!-- <div class="contact--container__text__tel">
                 <h2>Telefone</h2>
                 <p>(11) 99792-9388</p>
               </div>
-
+                
               <div class="contact--container__text__email">
                 <h2>E-mail</h2>
                 <p>contato@rmsoftwarehouse.com</p>
-              </div>
-            </div>
-
+              </div> -->
+              <h2>Contato</h2>
+              <p>Quer potencializar o seu negócio?</p>
+              <p>Quer automatizar a coleta e analise de dados para sua empresa?</p>
+              <p>Conte com a RM e solicite um contato!</p>
+            </div>   
             <div class="contact--container__form">
-              <form action="enviar-email.php" method="POST">
-                <label>
-                  <input type="text" name="name" placeholder="Escreva seu nome" />
-                </label>
-                <label>
-                  <input type="email" name="email" placeholder="Escreva seu e-mail"/>
-                </label>
-                <label>
-                  <input type="tel" name="cell" placeholder="Escreva seu telefone"/>
-                </label>
-                <label>
+              <form id="form-contato" action="enviar-email.php" method="POST">
+                <div class="dados">
+                  <label>
+                    <input type="text" name="name" placeholder="Escreva seu nome" />
+                  </label>
+                  <label>
+                    <input name="email" placeholder="Escreva seu e-mail"/>
+                  </label>
+                  <label>
+                    <input type="number" name="cell" placeholder="Escreva seu telefone"/>
+                  </label>
+                </div>
+                <label class="label-message">
                   <textarea name="message" placeholder="Diga-nos em que possamos lhe ajudar"></textarea>
                 </label>
-                <button type="submit" class="button">enviar</button>
               </form>
-            </div>
+              <div class="form-button">
+                <button  form="form-contato" type="submit" class="button">Enviar</button>
+              </div>
+            </div>            
           </div>
-        </div>
       </div>
     </section>
 

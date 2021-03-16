@@ -183,7 +183,6 @@ nav.mobile-menu a {
   display: flex;
   text-align: center;
   flex-direction: column;
-  /* width: 500px; */
   border: 1px solid #ccc;
   min-height: 300px;
 }
@@ -291,11 +290,15 @@ section.dev .dev-list {
 
 section.dev .dev-list li {
   width: 90%;
-  font-size: 20px;
+  font-size: 1.2rem;
   font-weight: 400;
   line-height: 1.5;
-  margin: 20px 0 30px 0;
-  /* list-style-position: inside; */
+  margin: 20px 0;
+}
+
+section.dev .dev-list li p{
+  font-size: 1.2rem;
+  margin-left: 20px;
 }
 
 /************* SLICK DOTS ***************/
@@ -326,81 +329,61 @@ section.dev .dev-list li {
 
 /******* CONTATO ********/
 section.contact {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* text-align: center; */
   padding: 70px 0 100px;
-  /* border: 2px solid yellow; */
 }
 
 .contact--container {
   display: flex;
   justify-content: space-around;
-  /* border: 5px solid red; */
   padding: 0 10px;
 }
 
 /**** CONTATO TEXT***********/
 .contact--container__text{
-  /* border: 5px solid green; */
-  display: flex;
-  /* align-items: center;
-  justify-content: center; */
-  flex-direction: column;
+    display: flex;
+ flex-direction: column;
   width: 33%;
-  /* padding-right: 10px; */
 }
+
 .contact--container__text > h2 {
   width: 100%;
   font-size: 2.5rem;
   margin-bottom: 35px;
-  /* border: 2px solid blue; */
-  /* margin: 20px 0 40px 0; */
 }
+
 .contact--container__text p {
   margin: 5px 0px;
+  font-size: 1.2rem;
 }
 
 /**** CONTATO FORM ***********/
 .contact--container__form{
   width: 66%;
-  /* border: 5px solid blue; */
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row; */
 }
 
 .contact--container__form form {
-  /* min-width: 512px; */
   width: 100%;
   display: flex;
-  /* border: 5px solid yellow; */
 }
 
 .contact--container__form form .dados {
-  /* border: 5px solid orange; */
   width: 50%;
   margin-right: 10px;
 }
 
 .contact--container__form form input{
-  font-size: 1.2rem;
   width: 100%;
   padding: 15px 10px;
   margin-bottom: 10px;
-  /* margin: 15px 0; */
+  border: 2px solid #ccc;
 }
 
 form .label-message {
   width: 50%;
   margin-bottom: 10px;
-  /* padding: 15px 10px; */
-  /* border: 5px solid violet; */
 }
 
 form .label-message textarea {
-  font-size: 1.2rem;
   width: 100%;
   resize: none;
   height: 100%;
@@ -419,11 +402,20 @@ form input:hover {
 .form-button {
   width: 100%;
   display: flex;
-  /* border: 2px solid green; */
 }
+
 .form-button button {
-  /* margin-right: 10px; */
   width: 100%;
+  padding: 15px 10px;
+  border: none;
+  background-color:#472562;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.form-button button:hover {
+background-color: #703b9b;
 }
 
 /******* FOOTTER  ********/
@@ -435,7 +427,6 @@ footer {
 }
 
 footer > .center {
-  max-width: 1280px;
   display: flex;
   justify-content: space-between;
   padding: 20px 0;
@@ -460,10 +451,6 @@ footer p.credits a {
   /***** SECTION DEV *****/
   section.dev {
     flex-direction: column;
-    padding-top: 70px;
-    padding-bottom: 70px;
-    padding-left: 10px;
-    padding-right: 10px;
   }
 
   /***** SECTION DEV IMAGE *****/
@@ -471,22 +458,23 @@ footer p.credits a {
     display: none;
   } 
 
-  /***** SECTION DEV TEXT *****/
+  /********SECTION DEV-TEXT ****/
   section.dev .dev-text {
-    width: 100%;
-    margin: 0px;
-  }
-
-  section.dev .dev-text h2 {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+     width: 85%;
   }
 
   section.dev .dev-list {
-    width: fit-content;
-    margin: 0 auto;
+    width: 85%;
+    margin-top: 20px;
+  } 
+
+  section.dev .dev-list li{
+    width: 100%;
+    list-style:inside;
   }
+
 
   /***** SECTION CONTATO *****/
   .contact--container {
@@ -514,6 +502,7 @@ footer p.credits a {
   }
 
 
+
   /******* FOOTTER  ********/
 
   footer > div {
@@ -538,24 +527,33 @@ footer p.credits a {
     width: 100%;
     padding: 0 10px;
   }
+  
   .head-text h2 {
     text-align: center;
     width: 100%;
   }
+
   .head-text p {
     text-align: center;
     width: 100%;
   }
 
   /********SECTION DEV-TEXT ****/
-  section.dev .dev-list {
-    width: 80%;
-  } 
+  section.dev .dev-text h2 {
+    text-align: center;
+  }
+
   
   /********SECTION CONTATO ****/
   .contact--container__text {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    text-align: justify;
   }
+  
+  .contact--container__text > h2 {
+    text-align: center;
+  }
+
 
   .contact--container__form form{
     flex-direction: column;
@@ -569,10 +567,22 @@ footer p.credits a {
   
   .contact--container__form form .label-message{
     padding: 0px;
+    margin-bottom: 20px;
   }
 
-  .contact--container__form form .dados input,
+  .contact--container__form form .dados input{
+    margin-bottom: 20px;
+  }
+
+  
   .contact--container__form form .label-message textarea{
-    font-size: 1rem;
+    height: 200px;
+  }
+}
+
+
+@media screen and (max-width: 479px) {
+  .vantagem{
+    border: none;
   }
 }

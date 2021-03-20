@@ -2,6 +2,7 @@
 
 $nome = addslashes($_POST['name']);
 $email = addslashes($_POST['email']);
+$cell = addslashes($_POST['cell']);
 $message  = addslashes($_POST['message']);
 
 require("/home1/rmsoft57/public_html/php/PHPMailer/src/PHPMailer.php");
@@ -26,8 +27,8 @@ $mail->Password = fgets($myfile);
 fclose($myfile);
  
 $mail->SetFrom($email, $nome);
-$mail->Subject = "Assunto da mensagem";
-$mail->Body = $message;
+$mail->Subject = "Contato do Form";
+$mail->Body = "telefone: " . $cell ."\n\nmensagem: " . $message;
 $mail->AddAddress("contato@rmsoftwarehouse.com");
 
 

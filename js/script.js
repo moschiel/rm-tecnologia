@@ -80,27 +80,44 @@ $(document).ready(function () {
       //input.removeClass("valid").addClass("invalid");
     }
   });
+
+
   $('input[name="email"]').on("input", function () {
     let input = $(this);
-    const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const regex = /^(([^<>()[\]\\.,;!@#$%¨&*():\s@"]+(\.[^<>()[\]\\.,;:!@#$%¨&*()\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if ( regex.test(input.val()) ) {
       input.removeClass("invalid").addClass("valid");
     } else {
       //input.removeClass("valid").addClass("invalid");
     }
   });
-  // $('input[name="cell"]').on("input", function () {
-  //   let input = $(this);
-  //   if (input.val().match('/^[\+]?[(]?[0-9]{2}[)]?[-\s\.]?[0-9]{4,5}[-\s\.]?[0-9]{4}$/im') ) {
-  //     input.removeClass("invalid").addClass("valid");
-  //   } else {
-  //     input.removeClass("valid").addClass("invalid");
-  //   }
-  // });
-  $('textarea[name="message"]').keyup(function (event) {
+
+  $('input[name="cell"]').on("input", function () {
     let input = $(this);
-    let message = $(this).val();
-    if (message) {
+    
+
+
+   let t =  input.val().replace(/\D/g, '')
+    .replace(/(\d{2})(\d)/, '($1) $2')
+    .replace(/(\d{4})(\d)/, '$1-$2')
+    .replace(/(\d{4})-(\d)(\d{4})/, '$1$2-$3')
+    .replace(/(-\d{4})\d+?$/, '$1')
+
+
+    input.val(t)
+
+    if (input.val().match(/^[(][0-9]{2}[)]?[ ]?[0-9]{4,5}[-]?[0-9]{4}$/g) ) {
+      input.removeClass("invalid").addClass("valid");
+    } else {
+      // input.removeClass("valid").addClass("invalid");
+    }
+  });
+  
+  $('textarea[name="message"]').keyup(function (event) {  
+      let input = $(this);
+      let lengthMessage = $(this).val().length;
+
+    if (lengthMessage > 0) {
       input.removeClass("invalid").addClass("valid");
     } else {
       //input.removeClass("valid").addClass("invalid");
@@ -119,18 +136,24 @@ $(document).ready(function () {
       alert("Erro: nome inválido");
       return false;
     }
-    const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    const regex = /^(([^<>()[\]\\.,;!@#$%¨&*():\s@"]+(\.[^<>()[\]\\.,;:!@#$%¨&*()\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    
     if ( !regex.test(email.val())) {
       email.removeClass("valid").addClass("invalid");
       alert("Erro: email inválido");
       return false;
     }
     // if ( !cell.val().match('/^[\+]?[(]?[0-9]{2}[)]?[-\s\.]?[0-9]{4,5}[-\s\.]?[0-9]{4}$/im') ) {
-    //   cell.removeClass("valid").addClass("invalid");
-    //   alert("Erro: telefone inválido");
-    //   return false;
-    // }
-    if( message.val() == "") {
+      
+      if ( !cell.val().match(/^[(][0-9]{2}[)]?[ ]?[0-9]{4,5}[-]?[0-9]{4}$/g) ) {
+        cell.removeClass("valid").addClass("invalid");
+        alert("Erro: Telefone inválido");
+        return false;
+      }
+      
+      if(message.val().length <= 0) {
+      console.log('message', message.val().length)
       alert("Erro: preencha a mensagem por favor");
       message.removeClass("valid").addClass("invalid");
       return false;

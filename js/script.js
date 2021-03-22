@@ -19,7 +19,7 @@ $(document).ready(function () {
   //evento para scroll automatico ao clicar em link do menu
   $("nav a").click(function (e) {
     e.preventDefault();
-  
+
     var section_id = $(this).attr("href");
     var offsetPixels = $(section_id).offset().top;
     $("html, body").animate({ scrollTop: offsetPixels }, 700);
@@ -29,7 +29,7 @@ $(document).ready(function () {
   selector_visibility_breakpoint = 1000;
   $(function () {
     let vantagensContainer = $(".vantagens .all-vantagens");
-  
+
     vantagensContainer.slick({
       dots: true,
       infinite: true,
@@ -40,7 +40,7 @@ $(document).ready(function () {
       speed: 700,
       slidesToShow: 4,
       slidesToScroll: 1,
-  
+
       responsive: [
         {
           breakpoint: selector_visibility_breakpoint,
@@ -74,18 +74,17 @@ $(document).ready(function () {
   $('input[name="name"]').on("input", function () {
     let input = $(this);
 
-    if ( input.val().match('^[a-zA-Z ]{3,30}$') ) {
+    if (input.val().match("^[a-zA-Z ]{3,30}$")) {
       input.removeClass("invalid").addClass("valid");
     } else {
       //input.removeClass("valid").addClass("invalid");
     }
   });
 
-
   $('input[name="email"]').on("input", function () {
     let input = $(this);
     const regex = /^(([^<>()[\]\\.,;!@#$%¨&*():\s@"]+(\.[^<>()[\]\\.,;:!@#$%¨&*()\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if ( regex.test(input.val()) ) {
+    if (regex.test(input.val())) {
       input.removeClass("invalid").addClass("valid");
     } else {
       //input.removeClass("valid").addClass("invalid");
@@ -94,28 +93,27 @@ $(document).ready(function () {
 
   $('input[name="cell"]').on("input", function () {
     let input = $(this);
-    
 
+    let t = input
+      .val()
+      .replace(/\D/g, "")
+      .replace(/(\d{2})(\d)/, "($1) $2")
+      .replace(/(\d{4})(\d)/, "$1-$2")
+      .replace(/(\d{4})-(\d)(\d{4})/, "$1$2-$3")
+      .replace(/(-\d{4})\d+?$/, "$1");
 
-   let t =  input.val().replace(/\D/g, '')
-    .replace(/(\d{2})(\d)/, '($1) $2')
-    .replace(/(\d{4})(\d)/, '$1-$2')
-    .replace(/(\d{4})-(\d)(\d{4})/, '$1$2-$3')
-    .replace(/(-\d{4})\d+?$/, '$1')
+    input.val(t);
 
-
-    input.val(t)
-
-    if (input.val().match(/^[(][0-9]{2}[)]?[ ]?[0-9]{4,5}[-]?[0-9]{4}$/g) ) {
+    if (input.val().match(/^[(][0-9]{2}[)]?[ ]?[0-9]{4,5}[-]?[0-9]{4}$/g)) {
       input.removeClass("invalid").addClass("valid");
     } else {
       // input.removeClass("valid").addClass("invalid");
     }
   });
-  
-  $('textarea[name="message"]').keyup(function (event) {  
-      let input = $(this);
-      let lengthMessage = $(this).val().length;
+
+  $('textarea[name="message"]').keyup(function (event) {
+    let input = $(this);
+    let lengthMessage = $(this).val().length;
 
     if (lengthMessage > 0) {
       input.removeClass("invalid").addClass("valid");
@@ -129,39 +127,37 @@ $(document).ready(function () {
     let name = $('input[name="name"]');
     let email = $('input[name="email"]');
     let cell = $('input[name="cell"]');
-    let message = $('textarea[name="message"]');
+    let message = $('textarea');
 
-    if ( !name.val().match('^[a-zA-Z ]{3,30}$') ) {
+    if (!name.val().match("^[a-zA-Z ]{3,30}$")) {
       name.removeClass("valid").addClass("invalid");
       alert("Erro: nome inválido");
       return false;
     }
 
     const regex = /^(([^<>()[\]\\.,;!@#$%¨&*():\s@"]+(\.[^<>()[\]\\.,;:!@#$%¨&*()\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    
-    if ( !regex.test(email.val())) {
+
+    if (!regex.test(email.val())) {
       email.removeClass("valid").addClass("invalid");
       alert("Erro: email inválido");
       return false;
     }
-    // if ( !cell.val().match('/^[\+]?[(]?[0-9]{2}[)]?[-\s\.]?[0-9]{4,5}[-\s\.]?[0-9]{4}$/im') ) {
-      
-      if ( !cell.val().match(/^[(][0-9]{2}[)]?[ ]?[0-9]{4,5}[-]?[0-9]{4}$/g) ) {
-        cell.removeClass("valid").addClass("invalid");
-        alert("Erro: Telefone inválido");
-        return false;
-      }
-      
-      if(message.val().length <= 0) {
-      console.log('message', message.val().length)
-      alert("Erro: preencha a mensagem por favor");
+
+
+    if (!cell.val().match(/^[(][0-9]{2}[)]?[ ]?[0-9]{4,5}[-]?[0-9]{4}$/g)) {
+      cell.removeClass("valid").addClass("invalid");
+      alert("Erro: Telefone inválido");
+      return false;
+    }
+
+    if (message.val().length <= 0) {
       message.removeClass("valid").addClass("invalid");
+      alert("Erro: preencha a mensagem por favor");
       return false;
     }
 
     return true;
   }
-
 
   //evento Prevent Default do formulario
   $("form").submit(function (e) {
@@ -171,26 +167,25 @@ $(document).ready(function () {
     var formData = $(this).serialize();
     console.log("Ajax Request: ", formData);
 
-    if(!validate()) {
+    if (!validate()) {
       return;
     }
     //return;
 
     // Make AJAX request
     $.post("enviar-email.php", formData)
-    .done(function () {
-      //limpa formulario
-      $('input[name="name"]').val("");
-      $('input[name="email"]').val("");
-      $('input[name="cell"]').val("");
-      $('textarea[name="message"]').val("");
-      //exibe mensagem de sucesso
-      alert('Mensagem enviada com sucesso');
-    })
-    .fail( function() {
-      //exibe mensagem de erro
-      alert('Erro no envio da mensagem!');
-    });
+      .done(function () {
+        //limpa formulario
+        $('input[name="name"]').val("");
+        $('input[name="email"]').val("");
+        $('input[name="cell"]').val("");
+        $('textarea[name="message"]').val("");
+        //exibe mensagem de sucesso
+        alert("Mensagem enviada com sucesso");
+      })
+      .fail(function () {
+        //exibe mensagem de erro
+        alert("Erro no envio da mensagem!");
+      });
   });
-
 });

@@ -101,6 +101,7 @@ $(document).ready(function () {
     .replace(/(\d{5})-(\d{4})/, '$1$2-$3')
     .replace(/(-\d{4})\d+?$/, '$1')
 
+
     // if (input.val().match('/^[\+]?[(]?[0-9]{2}[)]?[-\s\.]?[0-9]{4,5}[-\s\.]?[0-9]{4}$/im') ) {
     //   input.removeClass("invalid").addClass("valid");
     // } else {

@@ -296,7 +296,7 @@ section.dev .dev-list li {
   margin: 20px 0;
 }
 
-section.dev .dev-list li p{
+section.dev .dev-list li p {
   font-size: 1.2rem;
   margin-left: 20px;
 }
@@ -339,9 +339,9 @@ section.contact {
 }
 
 /**** CONTATO TEXT***********/
-.contact--container__text{
-    display: flex;
- flex-direction: column;
+.contact--container__text {
+  display: flex;
+  flex-direction: column;
   width: 33%;
 }
 
@@ -357,7 +357,7 @@ section.contact {
 }
 
 /**** CONTATO FORM ***********/
-.contact--container__form{
+.contact--container__form {
   width: 66%;
 }
 
@@ -371,7 +371,7 @@ section.contact {
   margin-right: 10px;
 }
 
-.contact--container__form form input{
+.contact--container__form form input {
   width: 100%;
   padding: 15px 10px;
   margin-bottom: 10px;
@@ -398,14 +398,21 @@ form input:hover {
   border: 2px solid #703b9b;
 }
 
-/* classes de validação de formulario */
-.valid {
-  color: black;
-  background-color: white;
+form textarea,
+form input {
+  outline: none;
 }
-.invalid  {
-  color: red;
-  background-color: rgb(255, 150, 150);
+
+/* classes de validação de formulario */
+
+.label-message textarea.valid,
+form input.valid {
+  border: 2px solid #703b9b;
+}
+
+form input.invalid,
+.label-message textarea.invalid {
+  border: 2px solid red;
 }
 
 /******* BOTAO ********/
@@ -418,14 +425,14 @@ form input:hover {
   width: 100%;
   padding: 15px 10px;
   border: none;
-  background-color:#472562;
+  background-color: #472562;
   font-size: 1.2rem;
   color: white;
   cursor: pointer;
 }
 
 .form-button button:hover {
-background-color: #703b9b;
+  background-color: #703b9b;
 }
 
 /******* FOOTTER  ********/
@@ -466,25 +473,24 @@ footer p.credits a {
   /***** SECTION DEV IMAGE *****/
   section.dev .cel-container {
     display: none;
-  } 
+  }
 
   /********SECTION DEV-TEXT ****/
   section.dev .dev-text {
     display: flex;
     flex-direction: column;
-     width: 85%;
+    width: 85%;
   }
 
   section.dev .dev-list {
     width: 85%;
     margin-top: 20px;
-  } 
-
-  section.dev .dev-list li{
-    width: 100%;
-    list-style:inside;
   }
 
+  section.dev .dev-list li {
+    width: 100%;
+    list-style: inside;
+  }
 
   /***** SECTION CONTATO *****/
   .contact--container {
@@ -498,11 +504,10 @@ footer p.credits a {
     width: 85%;
     margin-bottom: 40px;
   }
-  
+
   .contact--container__form {
     width: 85%;
   }
-
 }
 
 @media screen and (max-width: 750px) {
@@ -510,8 +515,6 @@ footer p.credits a {
   .head-text p {
     width: 500px;
   }
-
-
 
   /******* FOOTTER  ********/
 
@@ -521,14 +524,14 @@ footer p.credits a {
     flex-direction: column;
     text-align: center;
     justify-content: space-between;
-  } 
+  }
 }
 
 @media screen and (max-width: 514px) {
   nav.desk-menu {
     display: none;
   }
-  
+
   .navigation img {
     display: block;
   }
@@ -537,7 +540,7 @@ footer p.credits a {
     width: 100%;
     padding: 0 10px;
   }
-  
+
   .head-text h2 {
     text-align: center;
     width: 100%;
@@ -553,46 +556,42 @@ footer p.credits a {
     text-align: center;
   }
 
-  
   /********SECTION CONTATO ****/
   .contact--container__text {
     margin-bottom: 40px;
     text-align: justify;
   }
-  
+
   .contact--container__text > h2 {
     text-align: center;
   }
 
-
-  .contact--container__form form{
+  .contact--container__form form {
     flex-direction: column;
     width: 100%;
   }
-  
+
   .contact--container__form form .dados,
-  .contact--container__form form .label-message{
+  .contact--container__form form .label-message {
     width: 100%;
   }
-  
-  .contact--container__form form .label-message{
+
+  .contact--container__form form .label-message {
     padding: 0px;
     margin-bottom: 20px;
   }
 
-  .contact--container__form form .dados input{
+  .contact--container__form form .dados input {
     margin-bottom: 20px;
   }
 
-  
-  .contact--container__form form .label-message textarea{
+  .contact--container__form form .label-message textarea {
     height: 200px;
   }
 }
 
-
 @media screen and (max-width: 479px) {
-  .vantagem{
+  .vantagem {
     border: none;
   }
 }

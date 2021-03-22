@@ -115,9 +115,9 @@ $(document).ready(function () {
   
   $('textarea[name="message"]').keyup(function (event) {  
       let input = $(this);
-      let message = $(this).val();
+      let lengthMessage = $(this).val().length;
 
-    if (message !== '') {
+    if (lengthMessage > 0) {
       input.removeClass("invalid").addClass("valid");
     } else {
       //input.removeClass("valid").addClass("invalid");
@@ -147,13 +147,13 @@ $(document).ready(function () {
     // if ( !cell.val().match('/^[\+]?[(]?[0-9]{2}[)]?[-\s\.]?[0-9]{4,5}[-\s\.]?[0-9]{4}$/im') ) {
       
       if ( !cell.val().match(/^[(][0-9]{2}[)]?[ ]?[0-9]{4,5}[-]?[0-9]{4}$/g) ) {
-        console.log('cell', cell.val())
-      cell.removeClass("valid").addClass("invalid");
-      alert("Erro: Telefone inválido");
-      return false;
-    }
-
-    if( message.val() == "") {
+        cell.removeClass("valid").addClass("invalid");
+        alert("Erro: Telefone inválido");
+        return false;
+      }
+      
+      if(message.val().length <= 0) {
+      console.log('message', message.val().length)
       alert("Erro: preencha a mensagem por favor");
       message.removeClass("valid").addClass("invalid");
       return false;

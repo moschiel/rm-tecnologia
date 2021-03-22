@@ -95,25 +95,29 @@ $(document).ready(function () {
   $('input[name="cell"]').on("input", function () {
     let input = $(this);
     
-    input.val().replace(/\D/g, '')
+
+
+   let t =  input.val().replace(/\D/g, '')
     .replace(/(\d{2})(\d)/, '($1) $2')
     .replace(/(\d{4})(\d)/, '$1-$2')
-    .replace(/(\d{5})-(\d{4})/, '$1$2-$3')
+    .replace(/(\d{4})-(\d)(\d{4})/, '$1$2-$3')
     .replace(/(-\d{4})\d+?$/, '$1')
 
 
-    // if (input.val().match('/^[\+]?[(]?[0-9]{2}[)]?[-\s\.]?[0-9]{4,5}[-\s\.]?[0-9]{4}$/im') ) {
-    //   input.removeClass("invalid").addClass("valid");
-    // } else {
-    //   input.removeClass("valid").addClass("invalid");
-    // }
+    input.val(t)
+
+    if (input.val().match(/^[(][0-9]{2}[)]?[ ]?[0-9]{4,5}[-]?[0-9]{4}$/g) ) {
+      input.removeClass("invalid").addClass("valid");
+    } else {
+      // input.removeClass("valid").addClass("invalid");
+    }
   });
   
   $('textarea[name="message"]').keyup(function (event) {  
       let input = $(this);
       let message = $(this).val();
 
-    if (message.match('^[a-zA-Z0-9.!, ]$')) {
+    if (message !== '') {
       input.removeClass("invalid").addClass("valid");
     } else {
       //input.removeClass("valid").addClass("invalid");
@@ -132,17 +136,23 @@ $(document).ready(function () {
       alert("Erro: nome inválido");
       return false;
     }
+
     const regex = /^(([^<>()[\]\\.,;!@#$%¨&*():\s@"]+(\.[^<>()[\]\\.,;:!@#$%¨&*()\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    
     if ( !regex.test(email.val())) {
       email.removeClass("valid").addClass("invalid");
       alert("Erro: email inválido");
       return false;
     }
     // if ( !cell.val().match('/^[\+]?[(]?[0-9]{2}[)]?[-\s\.]?[0-9]{4,5}[-\s\.]?[0-9]{4}$/im') ) {
-    //   cell.removeClass("valid").addClass("invalid");
-    //   alert("Erro: telefone inválido");
-    //   return false;
-    // }
+      
+      if ( !cell.val().match(/^[(][0-9]{2}[)]?[ ]?[0-9]{4,5}[-]?[0-9]{4}$/g) ) {
+        console.log('cell', cell.val())
+      cell.removeClass("valid").addClass("invalid");
+      alert("Erro: Telefone inválido");
+      return false;
+    }
+
     if( message.val() == "") {
       alert("Erro: preencha a mensagem por favor");
       message.removeClass("valid").addClass("invalid");

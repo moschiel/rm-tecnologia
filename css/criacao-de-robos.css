@@ -73,7 +73,6 @@ header {
 /* <!--MENU-DESKTOP --> */
 nav.desk-menu ul {
   display: flex;
-  list-style: none;
 }
 
 nav.desk-menu li {

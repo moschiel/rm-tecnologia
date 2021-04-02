@@ -1,12 +1,13 @@
 
+//declaração de variaveis
 var animations = [
     'Criamos\nsoluções digitais\n',
-    'inovadoras.',
+    'profissionais.',
+    // 'inovadoras.',
     'para você.',
     'para sua empresa.',
-    'para o mundo.',
+    'quem trazem\nresultados reais.',
 ]; /* The text */
-
 var charIndex, writeSpeed, eraseSpeed, speed, animation_index, txt, writing, first_animation;
 var blinkCount, showCursor;
 
@@ -91,10 +92,13 @@ function blinkCursorWriter(){
     else {//erase last char
         htmlStr = htmlStr.substring(0, htmlStr.length-1); //apaga o cursor no final
     }
+    //atualiza o DOM
     document.getElementById("header-text-2").innerHTML = htmlStr;
     showCursor = !showCursor; //inverte estado de visibilidade do cursor
     blinkCount++;
-    if(blinkCount < 6) {
+    //descomentar linhas com 'lastAnimation' para o cursor piscar infinitamente
+    //let lastAnimation = !(animation_index < (animations.length-1));
+    if(blinkCount < 6 /*|| lastAnimation*/) {
         setTimeout(blinkCursorWriter, 300); //configura para chamar essa função novamwente em X milisegundos
     }
     else { //terminou de piscar

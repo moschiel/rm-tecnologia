@@ -1,71 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-
-    <meta name="keywords" content="html, css, responsive" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
-    />
-    <meta name="author" content="Roger Moschiel, Robson Mota" />
-
-    <link rel="stylesheet" href="./css/slick.css" />
-    <link rel="stylesheet" href="css/index.css" />
-
-    <script
-      defer
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-    ></script>
-    <script defer src="./js/slick.js"></script>
-    <script defer src="./js/script.js"></script>
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/home-style.css" />
     <title>RM SOFTWARE HOUSE</title>
+    <script defer src="js/typeAnimation.js"></script>
   </head>
   <body>
-    <div>
-      <div class="head-container">
-        <div class="center navigation">
-          <div class="logo">
-            <p>RM</p>
-            <p>&lt;SOFTWARE.HOUSE/&gt;</p>
-          </div>
-
-          <nav class="desk-menu">
-            <ul>
-              <li><a href="#home">home</a></li>
-              <li><a href="#service">serviços</a></li>
-              <li><a href="#contact">contato</a></li>
-            </ul>
-          </nav>
-          <!--desk-menu-->
-          <img class="menu" src="./images/menu.png" alt="menu" />
-          <nav class="mobile-menu">
-            <ul>
-              <li><a href="#home">home</a></li>
-              <li><a href="#service">serviços</a></li>
-              <li><a href="#contact">contato</a></li>
-            </ul>
-          </nav>
-          <!--mobile-menu-->
+    <header>
+      <div class="navigation center">
+        <div class="logo">
+          <p>RM</p>
+          <p>&lt;SOFTWARE.HOUSE/&gt;</p>
         </div>
-        <!--head-container center-->
+
+        <nav>
+          <ul>
+            <li><a href="#home">home</a></li>
+            <li><a href="#service">serviços</a></li>
+            <li><a href="#contact">contato</a></li>
+          </ul>
+        </nav>
       </div>
-      <div class="center">
-        <a href="/criacao-de-robos.html">
-          <button style="width: 100%; height: 100px; margin: 20px;">CRIAÇÃO DE ROBÔS</button>
-        </a>
-        <a href="/criacao-de-sites.html">
-          <button style="width: 100%; height: 100px; margin: 20px;">CRIAÇÃO DE SITES</button>
-        </a>
+      <div class="header-main center">
+        <h1 id="header-text-1"></h1>
+        <h1 id="header-text-2"></h1>
       </div>
-      <!--head-text-->
     </header>
 
+    <main class="center">
+      <section class="robot">
+        <div class="container-text">
+          <h2>RPA, Crawlers e APIs</h2>
+          <!-- <ul>
+              <li>RPA para automatizar as tarefas repetidas da sua empresa, 
+                otimizando tempo e economizando recursos.</li>
+              <li>Crawlers para coletar dados da web relevantes para seu negócio.</li>
+              <li>Desenvolvimento de APIs que são integradas aos seus sistemas.</li>
+            </ul> -->
+          <p>
+            RPA para automatizar as tarefas repetidas da sua empresa, otimizando
+            tempo e economizando recursos.
+          </p>
+          <p>Crawlers para coletar dados da web relevantes para seu negócio.</p>
+          <p>Desenvolvemos APIs que são integradas aos seus sistemas.</p>
+          <a href="criacao-de-robos.html">
+            <button>Saiba mais</button>
+          </a>
+        </div>
+
+        <div
+          class="container-image"
+          title="Foto de ThisIsEngineering no Pexels"
+        >
+          <img src="images/api-edit.png" alt="" />
+        </div>
+      </section>
+
+      <section class="website">
+        <div class="container-text">
+          <h2>Criação de Sites</h2>
+          <p>Ter um site hoje em dia é essencial para qualquer negócio.</p>
+          <p>Desenvolvemos para você websites com design personalizado.</p>
+          <p>
+            Seja um site simples ou uma loja virtual, transformamos sua ideia em
+            realidade.
+          </p>
+          <a href="criacao-de-sites.html">
+            <button>Saiba mais</button>
+          </a>
+        </div>
+
+        <div class="container-image">
+          <img
+            src="images/sketch-edit.jpg"
+            alt=""
+            title="Photo by Alvaro Reyes on Unsplash"
+          />
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="center">
+        <p>Todos os direitos reservados</p>
+        <p>CNPJ: 41.096.810/0001-70</p>
+        <p class="credits">
+          Icons made by
+          <a
+            href="https://www.flaticon.com/authors/vectors-market"
+            title="Vectors Market"
+            >Vectors Market</a
+          >
+          from
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com
+          </a>
+        </p>
+      </div>
+      <!--center-->
+    </footer>
   </body>
 </html>

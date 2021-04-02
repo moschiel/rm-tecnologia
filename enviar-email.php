@@ -6,7 +6,7 @@ $cell = addslashes($_POST['cell']);
 $message  = addslashes($_POST['message']);
 
 require("/home2/terate88/public_html/php/PHPMailer/src/PHPMailer.php");
-require("/home2/terate88/public_html/php//PHPMailer/src/SMTP.php");
+require("/home2/terate88/public_html/php/PHPMailer/src/SMTP.php");
 $mail = new PHPMailer\PHPMailer\PHPMailer();
 
 $mail->IsSMTP(); // enable SMTP

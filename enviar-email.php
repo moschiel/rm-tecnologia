@@ -5,8 +5,8 @@ $email = addslashes($_POST['email']);
 $cell = addslashes($_POST['cell']);
 $message  = addslashes($_POST['message']);
 
-require("/home1/rmsoft57/public_html/php/PHPMailer/src/PHPMailer.php");
-require("/home1/rmsoft57/public_html/php//PHPMailer/src/SMTP.php");
+require("/home2/terate88/public_html/php/PHPMailer/src/PHPMailer.php");
+require("/home2/terate88/public_html/php//PHPMailer/src/SMTP.php");
 $mail = new PHPMailer\PHPMailer\PHPMailer();
 
 $mail->IsSMTP(); // enable SMTP
@@ -17,19 +17,19 @@ $mail->IsSMTP(); // enable SMTP
 
 $mail->SMTPAuth = true; // authentication enabled
 $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
-$mail->Host = "br118.hostgator.com.br";
+$mail->Host = "ns952.hostgator.com.br";
 $mail->Port = 465; // or 587
 $mail->IsHTML(true);
-$mail->Username = "contato@rmsoftwarehouse.com";
+$mail->Username = "contato@teratech.com.br";
 
 $myfile = fopen("./pass.txt", "r") or die("Unable to open file!");
 $mail->Password = fgets($myfile);
 fclose($myfile);
  
 $mail->SetFrom($email, $nome);
-$mail->Subject = "Contato do Form";
+$mail->Subject = "Contato do Formulario";
 $mail->Body = "telefone: " . $cell ."\n\nmensagem: " . $message;
-$mail->AddAddress("contato@rmsoftwarehouse.com");
+$mail->AddAddress("contato@teratech.com.br");
 
 
 if(!$mail->Send()) {

@@ -1,0 +1,598 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+}
+
+body {
+  background-color: #ededed;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+input,
+textarea,
+button {
+  font-family: "Open Sans", sans-serif;
+}
+
+.center {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1150px;
+}
+
+/************HEADER *******/
+header {
+  width: 100%;
+  height: 90vh;
+  min-height: 700px;
+  background-size: contain;
+  background: url("../images/desenvolvedor-1100.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.head-container {
+  background-color: #281537;
+}
+
+.navigation {
+  width: 100%;
+  height: 75px;
+  margin: 0 auto;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navigation img {
+  display: none;
+}
+
+.navigation .logo p:first-child {
+  color: white;
+  font-size: 1.7rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.navigation .logo p:last-child {
+  color: white;
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+/* <!--MENU-DESKTOP --> */
+nav.desk-menu ul {
+  display: flex;
+  list-style: none;
+}
+
+nav.desk-menu li {
+  margin: auto 0 auto 40px;
+}
+
+nav.desk-menu ul li a {
+  text-transform: capitalize;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+nav.desk-menu ul li a:hover {
+  color: #703b9b;
+}
+
+/* <!--MENU-MOBILE --> */
+nav.mobile-menu {
+  left: 0px;
+  top: 75px;
+  width: 100%;
+  position: absolute;
+  display: none;
+}
+
+nav.mobile-menu li {
+  background-color: #281537;
+  text-align: center;
+  padding: 15px 0;
+}
+
+nav.mobile-menu li:hover {
+  background-color: #703b9b;
+}
+
+nav.mobile-menu a {
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  cursor: pointer;
+  display: block;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+}
+
+/* <!--HEADER TEXT --> */
+.head-text {
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+  height: calc(100% - 75px);
+  padding-right: 10px;
+}
+
+.head-text h2 {
+  margin-bottom: 20px;
+  /* font-size: 4em; */
+  font-weight: 900;
+  font-size: clamp(3rem, 4vw, 4rem);
+  width: 620px;
+}
+
+.head-text p {
+  width: 620px;
+  text-align: left;
+  /* font-size: 1.5rem; */
+  font-weight: 400;
+  font-size: clamp(1.3rem, 2vw, 1.5rem);
+}
+
+/************** SECTION VANTAGENS ***********/
+.vantagens {
+  padding: 70px 0 100px 0;
+}
+
+.container-vantagens > h2 {
+  text-align: center;
+  font-weight: 900;
+  font-size: 2.5rem;
+}
+
+.all-vantagens {
+  display: flex;
+  margin-top: 40px;
+  flex-direction: column;
+}
+
+/* ----------VANTANGES SLICK SLIDE------------ */
+.slick-track {
+  height: 100%;
+}
+
+.slick-slide {
+  height: 100%;
+}
+
+.slick-slide div {
+  height: 100%;
+}
+/* ----------- VANTANGEM BOX ----------- */
+.vantagem {
+  padding: 25px 20px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  min-height: 300px;
+}
+
+.vantagem svg {
+  margin: 0 auto;
+  width: 60px;
+  fill: #703b9b;
+}
+
+.vantagem h2 {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 30px 0;
+}
+
+.vantagem p {
+  color: #494949;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.vantagem:hover {
+  background-image: linear-gradient(to top left, #703b9b, #180d21);
+}
+
+.vantagem:hover p,
+.vantagem:hover h2,
+.vantagem:hover svg {
+  color: white;
+  fill: white;
+}
+
+.vantagens-selector {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.vantagens-selector > .selector {
+  margin: auto 7px;
+}
+.vantagens-selector > .selector:first-child {
+  background-color: #688293;
+}
+
+/***** SECTION DEV *****/
+section.dev {
+  width: 100%;
+  background-color: #472562;
+  background-image: linear-gradient(to top left, #703b9b, black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 0 100px;
+}
+
+/***** SECTION DEV IMAGE *****/
+section.dev .cel-container {
+  padding: 10px 0;
+  height: 450px;
+  width: 600px;
+}
+
+section.dev .cel-image {
+  background-image: url("../images/desenvolver-juntos-600.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 90% 90%;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+.bckg-img-up {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  z-index: 1;
+  margin-left: 10px;
+  background-color: #ededed;
+}
+
+/***** SECTION DEV TEXT *****/
+section.dev .dev-text {
+  width: 450px;
+  margin-left: 20px;
+}
+
+section.dev .dev-text h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 50px;
+  text-transform: capitalize;
+  color: #ededed;
+}
+
+section.dev .dev-list {
+  color: white;
+  margin-left: 20px;
+}
+
+section.dev .dev-list li {
+  width: 90%;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 20px 0;
+}
+
+section.dev .dev-list li p {
+  font-size: 1.2rem;
+  margin-left: 20px;
+}
+
+/************* SLICK DOTS ***************/
+.slick-dots {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  padding: 5px;
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  background-color: #d8d8d8;
+  margin: 30px 10px 0 10px;
+}
+
+.slick-dots .slick-active button {
+  background-color: #688293;
+}
+
+/******* CONTATO ********/
+section.contact {
+  padding: 70px 0 100px;
+}
+
+.contact--container {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 10px;
+}
+
+/**** CONTATO TEXT***********/
+.contact--container__text {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+}
+
+.contact--container__text > h2 {
+  width: 100%;
+  font-size: 2.5rem;
+  margin-bottom: 35px;
+}
+
+.contact--container__text p {
+  margin: 5px 0px;
+  font-size: 1.2rem;
+}
+
+/**** CONTATO FORM ***********/
+.contact--container__form {
+  width: 66%;
+}
+
+.contact--container__form form {
+  width: 100%;
+  display: flex;
+}
+
+.contact--container__form form .dados {
+  width: 50%;
+  margin-right: 10px;
+}
+
+.contact--container__form form input {
+  width: 100%;
+  padding: 15px 10px;
+  margin-bottom: 10px;
+  border: 2px solid #ccc;
+}
+
+form .label-message {
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+form .label-message textarea {
+  width: 100%;
+  resize: none;
+  height: 100%;
+  padding: 15px 10px;
+  border: 2px solid #ccc;
+}
+
+form textarea:focus,
+form input:focus,
+form textarea:hover,
+form input:hover {
+  border: 2px solid #703b9b;
+}
+
+form textarea,
+form input {
+  outline: none;
+}
+
+/* classes de validação de formulario */
+
+.label-message textarea.valid,
+form input.valid {
+  border: 2px solid #703b9b;
+}
+
+form input.invalid,
+.label-message textarea.invalid {
+  border: 2px solid red;
+}
+
+/******* BOTAO ********/
+.form-button {
+  width: 100%;
+  display: flex;
+}
+
+.form-button button {
+  width: 100%;
+  padding: 15px 10px;
+  border: none;
+  background-color: #472562;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.form-button button:hover {
+  background-color: #703b9b;
+}
+
+/******* FOOTTER  ********/
+footer {
+  background-color: #20112c;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+footer > .center {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  width: 100%;
+}
+
+footer .center p {
+  color: white;
+  font-size: 0.7rem;
+}
+
+footer p.credits a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.7rem;
+  text-transform: lowercase;
+}
+
+/* RESPONSIVO COMEÇA AQUI*/
+
+@media screen and (max-width: 850px) {
+  /***** SECTION DEV *****/
+  section.dev {
+    flex-direction: column;
+  }
+
+  /***** SECTION DEV IMAGE *****/
+  section.dev .cel-container {
+    display: none;
+  }
+
+  /********SECTION DEV-TEXT ****/
+  section.dev .dev-text {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+  }
+
+  section.dev .dev-list {
+    width: 85%;
+    margin-top: 20px;
+  }
+
+  section.dev .dev-list li {
+    width: 100%;
+    list-style: inside;
+  }
+
+  /***** SECTION CONTATO *****/
+  .contact--container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+  }
+
+  .contact--container__text {
+    width: 85%;
+    margin-bottom: 40px;
+  }
+
+  .contact--container__form {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .head-text h2,
+  .head-text p {
+    width: 500px;
+  }
+
+  /******* FOOTTER  ********/
+
+  footer > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 514px) {
+  nav.desk-menu {
+    display: none;
+  }
+
+  .navigation img {
+    display: block;
+  }
+
+  .head-text {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .head-text h2 {
+    text-align: center;
+    width: 100%;
+  }
+
+  .head-text p {
+    text-align: center;
+    width: 100%;
+  }
+
+  /********SECTION DEV-TEXT ****/
+  section.dev .dev-text h2 {
+    text-align: center;
+  }
+
+  /********SECTION CONTATO ****/
+  .contact--container__text {
+    margin-bottom: 40px;
+    text-align: justify;
+  }
+
+  .contact--container__text > h2 {
+    text-align: center;
+  }
+
+  .contact--container__form form {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact--container__form form .dados,
+  .contact--container__form form .label-message {
+    width: 100%;
+  }
+
+  .contact--container__form form .label-message {
+    padding: 0px;
+    margin-bottom: 20px;
+  }
+
+  .contact--container__form form .dados input {
+    margin-bottom: 20px;
+  }
+
+  .contact--container__form form .label-message textarea {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .vantagem {
+    border: none;
+  }
+}

@@ -6,6 +6,7 @@ $(document).ready(function () {
   menuIcon.click(function () {
     menuMobile.slideToggle();
   });
+
   //evento resize, desaparece o menu-mobile se tela maior que 760px
   function checkMenuDisplay() {
     if ($(window).width() > 760 && menuMobile.css("display") != "none") {
@@ -94,7 +95,7 @@ $(document).ready(function () {
   $('input[name="cell"]').on("input", function () {
     let input = $(this);
 
-    let t = input
+    let formatedText = input
       .val()
       .replace(/\D/g, "")
       .replace(/(\d{2})(\d)/, "($1) $2")
@@ -102,7 +103,7 @@ $(document).ready(function () {
       .replace(/(\d{4})-(\d)(\d{4})/, "$1$2-$3")
       .replace(/(-\d{4})\d+?$/, "$1");
 
-    input.val(t);
+    input.val(formatedText);
 
     if (input.val().match(/^[(][0-9]{2}[)]?[ ]?[0-9]{4,5}[-]?[0-9]{4}$/g)) {
       input.removeClass("invalid").addClass("valid");

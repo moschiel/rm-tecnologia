@@ -3,10 +3,9 @@
 var animations = [
     'Criamos\nsoluções digitais\n',
     'profissionais.',
-    // 'inovadoras.',
     'para você.',
     'para sua empresa.',
-    'quem trazem\nresultados reais.',
+    'que trazem\nresultados reais.',
 ]; /* The text */
 var charIndex, writeSpeed, eraseSpeed, speed, animation_index, txt, writing, first_animation;
 var blinkCount, showCursor;

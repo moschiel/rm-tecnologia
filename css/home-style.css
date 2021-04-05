@@ -20,7 +20,6 @@ html {
   max-width: 1150px;
 }
 
-
 header {
   width: 100%;
   height: 100vh;
@@ -43,20 +42,6 @@ header {
 
 .navigation img {
   display: none;
-}
-
-.navigation .logo p:first-child {
-  color: white;
-  font-size: 1.7rem;
-  font-weight: 600;
-  text-align: center;
-}
-
-.navigation .logo p:last-child {
-  color: white;
-  font-size: 1em;
-  font-weight: 600;
-  margin-bottom: 5px;
 }
 
 /* <!--MENU-DESKTOP --> */
@@ -109,7 +94,6 @@ nav.mobile-menu a {
   text-transform: capitalize;
   font-size: 1.2rem;
 }
-
 
 /* HEADER MAIN */
 .header-main {
@@ -211,7 +195,6 @@ footer p.credits a {
 }
 
 @media screen and (max-width: 600px) {
-
   nav.desk-menu {
     display: none;
   }
@@ -220,7 +203,6 @@ footer p.credits a {
     display: block;
     cursor: pointer;
   }
-
 
   .website,
   .robot {
@@ -232,7 +214,7 @@ footer p.credits a {
   .container-text {
     width: 100%;
   }
-  
+
   .container-text {
     margin: 10px 0;
   }

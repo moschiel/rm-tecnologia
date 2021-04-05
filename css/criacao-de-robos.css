@@ -7,13 +7,12 @@
   font-size: 16px;
 }
 
-body {
-  background-color: #ededed;
-}
 
-html,
-body {
-  height: 100%;
+body,
+html {
+  background-color: #ededed;
+  height: 100vh;
+  scroll-behavior: smooth;
 }
 
 input,

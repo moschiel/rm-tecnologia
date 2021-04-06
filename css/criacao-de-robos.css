@@ -12,7 +12,6 @@ body,
 html {
   background-color: #ededed;
   height: 100vh;
-  scroll-behavior: smooth;
 }
 
 input,
@@ -61,6 +60,7 @@ nav.desk-menu ul {
 }
 
 nav.desk-menu li {
+  list-style-type: none;
   margin: auto 0 auto 40px;
 }
 

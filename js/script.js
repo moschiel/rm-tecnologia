@@ -19,10 +19,10 @@ $(document).ready(function () {
 
   //evento para scroll automatico ao clicar em link do menu
   $("nav a").click(function (e) {
-    e.preventDefault();
-
+    
     var section_id = $(this).attr("href");
     var offsetPixels = $(section_id).offset().top;
+    e.preventDefault();
     $("html, body").animate({ scrollTop: offsetPixels }, 700);
   });
 

@@ -1,76 +1,5 @@
 $(document).ready(function () {
-  /********************** MENU EVENTS ****************************/
-  let menuIcon = $("img.menu");
-  let menuMobile = $(".mobile-menu");
-  //aplica evento de click para inverter visibilidade do menu mobile
-  menuIcon.click(function () {
-    menuMobile.slideToggle();
-  });
-
-  //evento resize, desaparece o menu-mobile se tela maior que 760px
-  function checkMenuDisplay() {
-    if ($(window).width() > 760 && menuMobile.css("display") != "none") {
-      menuMobile.css("display", "none");
-    }
-  }
-  $(window).resize(() => {
-    checkMenuDisplay();
-  });
-
-  //evento para scroll automatico ao clicar em link do menu
-  $("nav a").click(function (e) {
     
-    var section_id = $(this).attr("href");
-    var offsetPixels = $(section_id).offset().top;
-    e.preventDefault();
-    $("html, body").animate({ scrollTop: offsetPixels }, 700);
-  });
-
-  /******************** vantagem slick caroussel **********************/
-  selector_visibility_breakpoint = 1000;
-  $(function () {
-    let vantagensContainer = $(".vantagens .all-vantagens");
-
-    vantagensContainer.slick({
-      dots: true,
-      infinite: true,
-      prevArrow: false,
-      nextArrow: false,
-      autoplay: true,
-      autoplaySpeed: 3000,
-      speed: 700,
-      slidesToShow: 4,
-      slidesToScroll: 1,
-
-      responsive: [
-        {
-          breakpoint: selector_visibility_breakpoint,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 1,
-          },
-        },
-        {
-          breakpoint: 770,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-          },
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-          },
-        },
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
-      ],
-    });
-  });
-
   //eventos pra limpar validação do formulario ao digitar no input
   $('input[name="name"]').on("input", function () {
     let input = $(this);
@@ -189,4 +118,5 @@ $(document).ready(function () {
         alert("Erro no envio da mensagem!");
       });
   });
+
 });

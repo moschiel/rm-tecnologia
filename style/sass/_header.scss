@@ -1,0 +1,23 @@
+%header-home {
+    width: 100%;
+    height: 100vh;
+}
+
+%header-shared {
+    width: 100%;
+    height: 90vh;
+    min-height: 700px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+%header-criacao-site {
+    @extend %header-shared;
+    background: url("../images/desenvolvedor-1100.jpg");
+}
+
+%header-criacao-robo {
+    @extend %header-shared;
+    background: url("../images/capa.png");
+}

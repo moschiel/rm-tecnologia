@@ -20,6 +20,7 @@
       "**/js/**",
       "**/images/**"
    ],
+   // SASS - não manjo
    "liveSassCompile.settings.generateMap": true,
    "liveSassCompile.settings.autoprefix": [
        "> 1%",

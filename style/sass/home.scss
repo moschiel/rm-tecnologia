@@ -1,1 +1,6 @@
 @use 'base';
+@use 'header';
+
+header {
+    @extend %header-home;
+}

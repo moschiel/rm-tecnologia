@@ -21,9 +21,13 @@ html {
 
 header {
   width: 100%;
-  height: 100vh;
+  height: 90vh;
+  min-height: 700px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background: url("../images/capa.png");
 }
 header .head-container {
   background-color: #281537;
-  height: 100%;
 }

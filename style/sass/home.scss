@@ -1,6 +1,4 @@
 @use 'base';
-@use 'header';
+@use 'header' as h;
 
-header {
-    @extend %header-home;
-}
+@include h.header-home;

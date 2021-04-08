@@ -7,13 +7,12 @@
   font-size: 16px;
 }
 
-body {
-  background-color: #ededed;
-}
 
-html,
-body {
-  height: 100%;
+
+body,
+html {
+  background-color: #ededed;
+  height: 100vh;
 }
 
 input,
@@ -55,20 +54,6 @@ header {
 
 .navigation img {
   display: none;
-}
-
-.navigation .logo p:first-child {
-  color: white;
-  font-size: 1.7rem;
-  font-weight: 600;
-  text-align: center;
-}
-
-.navigation .logo p:last-child {
-  color: white;
-  font-size: 1em;
-  font-weight: 600;
-  margin-bottom: 5px;
 }
 
 /* <!--MENU-DESKTOP --> */
@@ -185,7 +170,7 @@ nav.mobile-menu a {
   text-align: center;
   flex-direction: column;
   border: 1px solid #ccc;
-  min-height: 300px;
+  min-height: 320px;
 }
 
 .vantagem svg {

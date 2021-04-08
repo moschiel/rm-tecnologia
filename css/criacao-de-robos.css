@@ -7,13 +7,11 @@
   font-size: 16px;
 }
 
-body {
-  background-color: #ededed;
-}
 
-html,
-body {
-  height: 100%;
+body,
+html {
+  background-color: #ededed;
+  height: 100vh;
 }
 
 input,
@@ -56,26 +54,13 @@ header {
   display: none;
 }
 
-.navigation .logo p:first-child {
-  color: white;
-  font-size: 1.7rem;
-  font-weight: 600;
-  text-align: center;
-}
-
-.navigation .logo p:last-child {
-  color: white;
-  font-size: 1em;
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-
 /* <!--MENU-DESKTOP --> */
 nav.desk-menu ul {
   display: flex;
 }
 
 nav.desk-menu li {
+  list-style-type: none;
   margin: auto 0 auto 40px;
 }
 
@@ -333,6 +318,7 @@ section.contact {
 
 .contact--container {
   display: flex;
+  align-items: center;
   justify-content: space-around;
   padding: 0 10px;
 }
@@ -342,16 +328,17 @@ section.contact {
   display: flex;
   flex-direction: column;
   width: 33%;
+  padding: 0 5px 0 0;
 }
 
 .contact--container__text > h2 {
   width: 100%;
   font-size: 2.5rem;
-  margin-bottom: 35px;
+  margin-bottom: 15px;
 }
 
 .contact--container__text p {
-  margin: 5px 0px;
+  margin: 4px 0px;
   font-size: 1.2rem;
 }
 

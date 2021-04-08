@@ -1,4 +1,8 @@
-@use 'base';
-@use 'header';
-@use 'banner';
-@include banner.getBanner(home);
+@import 'base';
+@import 'header';
+@import 'banner';
+@import 'service_home';
+
+// @include banner.getBanner(home);
+
+

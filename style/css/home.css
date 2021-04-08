@@ -90,30 +90,63 @@ header .head-container .navigation nav.mobile-menu ul li:hover {
   background-color: #703b9b;
 }
 
-.banner {
-  width: 100%;
-  height: 90vh;
-  min-height: 700px;
-  margin-top: 75px;
-  background-color: #281537;
-}
-.banner .text-container {
-  height: 90%;
-  padding-top: 50px;
+section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 50px 0;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+#service .robot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+#service .container-image,
+#service .container-text {
+  width: 50%;
+  padding: 0 30px 30px 30px;
+}
+#service .container-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
-.banner .text-container h1 {
-  font-size: clamp(3rem, 6vw, 5rem);
-  width: 80%;
+#service .container-image img {
+  max-width: 100%;
+  height: auto;
+}
+#service .container-text h2 {
+  font-size: 2.5rem;
+  margin: 0 0 20px 0;
   font-weight: 900;
+  color: #281537;
+}
+#service .container-text p {
+  margin: 7px 0;
+  font-size: 1.2rem;
+}
+#service .container-text button {
+  padding: 15px 30px;
+  border: none;
+  background-color: #472562;
+  font-size: 1.2rem;
   color: white;
+  cursor: pointer;
+  margin-top: 45px;
+}
+#service .container-text button:hover {
+  background-color: #703b9b;
 }

@@ -1,4 +1,4 @@
-@use 'base';
-@use 'header';
-@use 'banner';
+@import 'base';
+@import 'header';
+@import 'banner';
 @include banner.getBanner(criacao-de-robos);

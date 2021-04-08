@@ -120,7 +120,6 @@ header .head-container .navigation nav.mobile-menu ul li:hover {
 }
 .banner .head-text h2 {
   margin-bottom: 20px;
-  /* font-size: 4em; */
   font-weight: 900;
   font-size: clamp(3rem, 4vw, 4rem);
   width: 620px;
@@ -128,7 +127,6 @@ header .head-container .navigation nav.mobile-menu ul li:hover {
 .banner .head-text p {
   width: 620px;
   text-align: left;
-  /* font-size: 1.5rem; */
   font-weight: 400;
   font-size: clamp(1.3rem, 2vw, 1.5rem);
 }

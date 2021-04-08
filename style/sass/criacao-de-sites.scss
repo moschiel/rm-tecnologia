@@ -3,3 +3,5 @@
 @import 'banner';
 @include getBanner(criacao-de-sites);
 @import 'vantagens';
+@import 'services';
+@include getService(criacao-de-sites);

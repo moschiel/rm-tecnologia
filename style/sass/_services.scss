@@ -1,0 +1,76 @@
+@mixin getService ($rota) {
+    $imgPath: "";
+    @if $rota == criacao-de-sites {
+        $imgPath: "/images/desenvolver-juntos-600.jpg";
+    }
+    @else {
+        $imgPath: "/images/together-600.jpg";
+    }
+
+    @include mountService($imgPath);
+}
+
+@mixin mountService ($imgPath) {
+    section.dev {
+        width: 100%;
+        background-color: #472562;
+        background-image: linear-gradient(to top left, #703b9b, black);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 70px 0 100px;
+        //text container
+        .dev-text {
+            width: 450px;
+            margin-left: 20px;
+            h2 {
+                font-size: 2.5rem;
+                font-weight: 900;
+                margin-bottom: 50px;
+                text-transform: capitalize;
+                color: #ededed;
+            }
+            .dev-list {
+                color: white;
+                margin-left: 20px;
+                li {
+                    width: 90%;
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    margin: 20px 0;
+                    p {
+                        font-size: 1.2rem;
+                        margin-left: 20px;
+                    }
+                }
+            }
+        }
+        //image container
+        .cel-container {
+            padding: 10px 0;
+            height: 450px;
+            width: 600px;
+            .bckg-img-up {
+                width: 250px;
+                height: 250px;
+                position: absolute;
+                z-index: 1;
+                margin-left: 10px;
+                background-color: #ededed;
+            }
+            .cel-image {
+                background-image: url($imgPath);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 90% 90%;
+                height: 100%;
+                width: 100%;
+                position: relative;
+                z-index: 2;
+                margin: 0 auto;
+            }
+        }
+        
+    }
+} 

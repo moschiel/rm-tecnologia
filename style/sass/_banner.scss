@@ -7,7 +7,7 @@ $headerBackgroundColor: #281537;
         min-height: 700px;
         margin-top: 75px; //altura do header
         
-        @if $rota == home {
+        @if $rota == home { //cai aqui se for home
             background-color: $headerBackgroundColor;
             .text-container {
                 height: 90%;

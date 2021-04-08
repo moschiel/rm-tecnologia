@@ -1,3 +1,6 @@
+//ARQUIVO DO HEADER
+@use "navigation" as n;
+
 $headerBackgroundColor: #281537;
 
 //HOME 
@@ -6,8 +9,9 @@ $headerBackgroundColor: #281537;
         width: 100%;
         height: 100vh;
         .head-container {
-            background-color: $headerBackgroundColor;
             height: 100%;
+            background-color: $headerBackgroundColor;
+            @include n.navigation;
         }      
     }
 }
@@ -23,6 +27,7 @@ $headerBackgroundColor: #281537;
     background-repeat: no-repeat;
     .head-container {
         background-color: $headerBackgroundColor;
+        @include n.navigation;
     }
 }
 

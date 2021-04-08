@@ -21,11 +21,12 @@ html {
 
 header {
   width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10;
 }
 header .head-container {
   width: 100%;
-  position: fixed;
-  top: 0;
   background-color: #281537;
 }
 header .head-container .navigation {
@@ -129,4 +130,93 @@ header .head-container .navigation nav.mobile-menu ul li:hover {
   text-align: left;
   font-weight: 400;
   font-size: clamp(1.3rem, 2vw, 1.5rem);
+}
+
+.vantagens {
+  padding: 70px 0 100px 0;
+}
+.vantagens .container-vantagens > h2 {
+  text-align: center;
+  font-weight: 900;
+  font-size: 2.5rem;
+}
+.vantagens .container-vantagens .all-vantagens {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.vantagens .container-vantagens .all-vantagens .vantagem {
+  padding: 25px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid #ccc;
+  min-height: 320px;
+}
+.vantagens .container-vantagens .all-vantagens .vantagem svg {
+  margin: 0 auto;
+  width: 60px;
+  fill: #703b9b;
+}
+.vantagens .container-vantagens .all-vantagens .vantagem h2 {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 30px 0;
+}
+.vantagens .container-vantagens .all-vantagens .vantagem p {
+  color: #494949;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+.vantagens .container-vantagens .all-vantagens .vantagem:hover {
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#703b9b), to(#180d21));
+  background-image: linear-gradient(to top left, #703b9b, #180d21);
+}
+.vantagens .container-vantagens .all-vantagens .vantagem:hover p,
+.vantagens .container-vantagens .all-vantagens .vantagem:hover h2,
+.vantagens .container-vantagens .all-vantagens .vantagem:hover svg {
+  color: white;
+  fill: white;
+}
+.vantagens .slick-track,
+.vantagens .slick-slide,
+.vantagens .slick-slide div {
+  height: 100%;
+}
+.vantagens .slick-dots {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.vantagens .slick-dots button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  padding: 5px;
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  background-color: #d8d8d8;
+  margin: 30px 10px 0 10px;
+}
+.vantagens .slick-dots .slick-active button {
+  background-color: #688293;
 }

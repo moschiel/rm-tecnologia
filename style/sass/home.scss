@@ -1,8 +1,7 @@
 @import 'base';
 @import 'header';
 @import 'banner';
+@include getBanner(home);
 @import 'service_home';
-
-// @include banner.getBanner(home);
 
 

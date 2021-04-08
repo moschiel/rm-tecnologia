@@ -1,4 +1,5 @@
 @import 'base';
 @import 'header';
 @import 'banner';
-@include banner.getBanner(criacao-de-sites);
+@include getBanner(criacao-de-sites);
+@import 'vantagens';

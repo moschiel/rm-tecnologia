@@ -1,4 +1,5 @@
 @import 'base';
 @import 'header';
 @import 'banner';
-@include banner.getBanner(criacao-de-robos);
+@include getBanner(criacao-de-robos);
+@import 'vantagens';

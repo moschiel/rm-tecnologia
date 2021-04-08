@@ -1,4 +1,4 @@
 @use 'base';
-
-@use 'header' as h;
-@include h.header-home;
+@use 'header';
+@use 'banner';
+@include banner.getBanner(home);

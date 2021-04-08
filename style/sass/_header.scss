@@ -1,48 +1,15 @@
 //ARQUIVO DO HEADER
-@use "navigation" as n;
+@use "navigation";
 
 $headerBackgroundColor: #281537;
 
-//HOME 
-@mixin header-home {
-    header{
-        width: 100%;
-        height: 100vh;
-        .head-container {
-            height: 100%;
-            background-color: $headerBackgroundColor;
-            @include n.navigation;
-        }      
-    }
-}
-
-//CRIAÇÃO-DE-SITES
-//CRIAÇÃO-DE-ROBOS 
-@mixin header-shared {
+header {
     width: 100%;
-    height: 90vh;
-    min-height: 700px;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
     .head-container {
+        width: 100%;
+        position: fixed;
+        top: 0;
         background-color: $headerBackgroundColor;
-        @include n.navigation;
-    }
-}
-
-//estilo para rota /criacao-de-sites
-@mixin header-criacao-de-sites {
-    header {
-        @include header-shared;
-        background: url("../images/desenvolvedor-1100.jpg");
-    }
-}
-
-//estilo para rota /criacao-de-robos
-@mixin header-criacao-de-robos {
-    header {
-        @include header-shared;
-        background: url("../images/capa.png");
+        @include navigation.getNavigation;
     }
 }

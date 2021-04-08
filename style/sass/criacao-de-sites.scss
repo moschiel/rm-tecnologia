@@ -1,4 +1,4 @@
 @use 'base';
-
-@use 'header' as h;
-@include h.header-criacao-de-sites;
+@use 'header';
+@use 'banner';
+@include banner.getBanner(criacao-de-sites);

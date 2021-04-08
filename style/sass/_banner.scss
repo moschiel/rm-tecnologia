@@ -1,0 +1,64 @@
+$headerBackgroundColor: #281537;
+
+@mixin getBanner ($rota) {
+    .banner {
+        width: 100%;
+        height: 90vh;
+        min-height: 700px;
+        margin-top: 75px; //altura do header
+        
+        @if $rota == home {
+            background-color: $headerBackgroundColor;
+            .text-container {
+                height: 90%;
+                padding-top: 50px;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                h1 {
+                    font-size: clamp(3rem, 6vw, 5rem);
+                    width: 80%;
+                    font-weight: 900;
+                    color: white;
+                }
+            }
+        } @else { //cai aqui se for criacao-de-site ou criacao-de-robo
+            
+            @if $rota == criacao-de-sites {
+                background: url("/images/desenvolvedor-1100.jpg");
+            } @else if $rota == criacao-de-robos {
+                background: url("/images/capa.png");
+            } @else {
+                @error "Rota desconhecida: #{$rota}";
+            }
+            background-position: center;
+            background-repeat: no-repeat;   
+            background-size: cover;
+
+            .head-text {
+                color: white;
+                display: flex;
+                height: calc(100% - 75px);
+                padding-right: 10px;
+                align-items: flex-end;
+                justify-content: center;
+                flex-direction: column;
+                h2 {
+                    margin-bottom: 20px;
+                    /* font-size: 4em; */
+                    font-weight: 900;
+                    font-size: clamp(3rem, 4vw, 4rem);
+                    width: 620px; 
+                }
+                p {
+                    width: 620px;
+                    text-align: left;
+                    /* font-size: 1.5rem; */
+                    font-weight: 400;
+                    font-size: clamp(1.3rem, 2vw, 1.5rem);
+                }
+            }
+
+        }
+    }
+}

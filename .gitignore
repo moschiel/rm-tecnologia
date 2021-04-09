@@ -1,1 +1,4 @@
 /pass.txt
+
+#força git a não excluir a pasta .vscode pois temos a configuração do SASS nela
+!.vscode/

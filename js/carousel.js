@@ -1,7 +1,6 @@
 /******************** vantagem slick caroussel **********************/
 $(document).ready(function () {
-    
-  selector_visibility_breakpoint = 1000;
+  
   $(function () {
    let vantagensContainer = $(".vantagens .all-vantagens");
 
@@ -18,21 +17,21 @@ $(document).ready(function () {
 
      responsive: [
        {
-         breakpoint: selector_visibility_breakpoint,
+         breakpoint: 992, //for-tablet-landscape
          settings: {
            slidesToShow: 3,
            slidesToScroll: 1,
          },
        },
        {
-         breakpoint: 770,
+         breakpoint: 768, //for-tablet-portrait
          settings: {
            slidesToShow: 2,
            slidesToScroll: 2,
          },
        },
        {
-         breakpoint: 480,
+         breakpoint: 576, //for-phone-portrait
          settings: {
            slidesToShow: 1,
            slidesToScroll: 1,

@@ -1,0 +1,29 @@
+{
+    // SASS - caminho para salvar os arquivos compilados
+    "liveSassCompile.settings.formats":[
+       {
+           "format": "expanded",
+           "extensionName": ".css",
+           "savePath": "/style/css"
+       },
+       {
+           "extensionName": ".min.css",
+           "format": "compressed",
+           "savePath": "/style/min"
+       }
+   ],
+   // SASS - pastas que o sass não precisa procurar por arquivos .scss para compilar 
+   "liveSassCompile.settings.excludeList": [
+      "**/node_modules/**",
+      ".vscode/**",
+      "**/php/**",
+      "**/js/**",
+      "**/images/**"
+   ],
+   // SASS - não manjo
+   "liveSassCompile.settings.generateMap": false,
+   "liveSassCompile.settings.autoprefix": [
+       "> 1%",
+       "last 2 versions"
+   ]
+}

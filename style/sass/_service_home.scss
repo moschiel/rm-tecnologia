@@ -1,0 +1,61 @@
+@import "responsive-breakpoints";
+
+#service {
+    section.robot {
+        flex-direction: row-reverse;
+    }
+    section.robot,
+    section.website {
+        padding: 50px 0;
+        display: flex;
+        flex-wrap: nowrap;
+        @include for-tablet-portrait {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .container-image,
+    .container-text {
+        width: 50%;
+        padding: 0 30px 30px 30px;
+        @include for-tablet-portrait {
+            width: 100%;
+        }
+    }
+
+    .container-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    .container-text {
+        h2 {
+            font-size: 2.5rem;
+            margin: 0 0 20px 0;
+            font-weight: 900;
+            color: #281537;
+        }
+        p {
+            margin: 7px 0;
+            font-size: 1.2rem;
+        }
+        button {
+            padding: 15px 30px;
+            border: none;
+            background-color: #472562;
+            font-size: 1.2rem;
+            color: white;
+            cursor: pointer;
+            margin-top: 45px;
+        }
+        button:hover {
+            background-color: #703b9b;
+        }
+    }
+}
+

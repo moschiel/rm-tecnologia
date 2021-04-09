@@ -1,0 +1,82 @@
+@import "responsive-breakpoints";
+
+$headerBackgroundColor: #281537;
+
+@mixin getBanner ($rota) {
+    .banner {
+        width: 100%;
+        height: calc(100vh - 75px); //altura do header é 75px 
+        margin-top: 74px; //altura do header é 75px
+        @include for-phone-portrait {
+            min-height: 550px;
+        }
+    
+        @if $rota == home { //cai aqui se for home
+            background-color: $headerBackgroundColor;
+            .text-container {
+                height: 90%;
+                padding: 50px 10px 0px 10px;
+                display: flex;
+                flex-direction: column;
+                h1 {
+                    width: 100%;
+                    font-size: clamp(3.2rem, 6vw, 7rem);
+                    font-weight: 900;
+                    color: white;
+                }
+            }
+        } @else { //cai aqui se for criacao-de-site ou criacao-de-robo
+            
+            @if $rota == criacao-de-sites {
+                background: url("/images/desenvolvedor-1100.jpg");
+            } @else if $rota == criacao-de-robos {
+                background: url("/images/capa.png");
+            } @else {
+                @error "Rota desconhecida: #{$rota}";
+            }
+            background-position: center;
+            background-repeat: no-repeat;   
+            background-size: cover;
+
+            .head-text {
+                color: white;
+                display: flex;
+                height: calc(100% - 75px);
+                padding-right: 10px;
+                align-items: flex-end;
+                justify-content: center;
+                flex-direction: column;
+                @include for-phone-portrait {
+                    width: 100%;
+                    padding: 0 10px;
+                }
+                h2 {
+                    margin-bottom: 20px;
+                    font-weight: 900;
+                    font-size: clamp(3rem, 4vw, 4rem);
+                    width: 620px; 
+                    @include for-tablet-portrait {
+                        width: 500px;
+                    }
+                    @include for-phone-portrait {
+                        text-align: center;
+                        width: 100%;
+                    }
+                }
+                p {
+                    width: 620px;
+                    text-align: left;
+                    font-weight: 400;
+                    font-size: clamp(1.3rem, 2vw, 1.5rem);
+                    @include for-tablet-portrait {
+                        width: 500px;
+                    }
+                    @include for-phone-portrait {
+                        text-align: center;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

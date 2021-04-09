@@ -1,0 +1,15 @@
+@mixin for-phone-portrait {
+    @media (max-width: 576px) { @content; } 
+}
+// Small devices (landscape phones, tablet portrait 576px ~ 768px)
+@mixin for-tablet-portrait {
+    @media (max-width: 768px) { @content; }
+}
+// Medium devices (landscape tablets, 769px ~ 992px)
+@mixin for-tablet-landscape {
+    @media (max-width: 992px) { @content; }
+}
+// Large devices (desktops, 992px ~ 1200px)
+@mixin for-desktop {
+    @media (max-width: 1200px) { @content; }
+}

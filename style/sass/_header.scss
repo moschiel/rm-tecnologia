@@ -1,0 +1,16 @@
+//ARQUIVO DO HEADER
+@use "navigation";
+
+$headerBackgroundColor: #281537;
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    .head-container {
+        width: 100%;
+        background-color: $headerBackgroundColor;
+        @include navigation.getNavigation;
+    }
+}

@@ -1,3 +1,5 @@
+@import "responsive-breakpoints";
+
 @mixin getService ($rota) {
     $imgPath: "";
     @if $rota == criacao-de-sites {
@@ -19,26 +21,46 @@
         justify-content: center;
         align-items: center;
         padding: 70px 0 100px;
+        @include for-tablet-landscape {
+            flex-direction: column;
+        }
         //text container
         .dev-text {
             width: 450px;
             margin-left: 20px;
+            @include for-tablet-landscape {
+                display: flex;
+                flex-direction: column;
+                width: 85%;
+            }
             h2 {
                 font-size: 2.5rem;
                 font-weight: 900;
                 margin-bottom: 50px;
                 text-transform: capitalize;
                 color: #ededed;
+                @include for-phone-portrait {
+                    text-align: center;
+                }
             }
             .dev-list {
                 color: white;
                 margin-left: 20px;
+                @include for-tablet-landscape {
+                    width: 85%;
+                    // margin-top: 20px;
+                }
+
                 li {
                     width: 90%;
                     font-size: 1.2rem;
                     font-weight: 400;
                     line-height: 1.5;
                     margin: 20px 0;
+                    @include for-tablet-landscape {
+                        width: 100%;
+                        // list-style: inside;
+                    }
                     p {
                         font-size: 1.2rem;
                         margin-left: 20px;
@@ -51,6 +73,10 @@
             padding: 10px 0;
             height: 450px;
             width: 600px;
+            @include for-tablet-landscape {
+                display: none;
+            }
+
             .bckg-img-up {
                 width: 250px;
                 height: 250px;

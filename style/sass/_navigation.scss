@@ -1,4 +1,5 @@
-//ARQUIVO DO MENU DE NAVEGAÇÃO
+@import "responsive-breakpoints";
+
 @mixin getNavigation {
     .navigation {
         width: 100%;
@@ -8,10 +9,14 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        img {
-            display: none;
+        .logo {
+            cursor: pointer;  
+            width:185px;
         }
         nav.desk-menu {
+            @include for-tablet-portrait {
+                display: none;
+            }
             ul {
                 display: flex;
                 list-style: none;
@@ -32,10 +37,10 @@
         }
         nav.mobile-menu {
             display: none;
+            position: absolute;
             left: 0px;
             top: 75px;
             width: 100%;
-            position: absolute;
             ul {
                 li {
                     background-color: #281537;
@@ -54,6 +59,13 @@
                 li:hover{
                     background-color: #703b9b;
                 }
+            }
+        }
+        img.menu {
+            display: none;
+            @include for-tablet-portrait {
+                display: block;
+                cursor: pointer;
             }
         }
     }

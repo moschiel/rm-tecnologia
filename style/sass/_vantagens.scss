@@ -1,3 +1,4 @@
+@import "responsive-breakpoints";
 
 .vantagens {
     padding: 70px 0 100px 0;
@@ -18,6 +19,9 @@
                 flex-direction: column;
                 border: 1px solid #ccc;
                 min-height: 320px;
+                @include for-phone-portrait {
+                    border: none;
+                }
                 svg {
                     margin: 0 auto;
                     width: 60px;

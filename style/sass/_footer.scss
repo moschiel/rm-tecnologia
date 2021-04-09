@@ -1,3 +1,5 @@
+@import "responsive-breakpoints";
+
 footer {
     background-color: #20112c;
     display: flex;
@@ -8,6 +10,13 @@ footer {
         justify-content: space-between;
         padding: 20px 0;
         width: 100%;
+        @include for-phone-portrait {
+            width: 100%;
+            text-align: center;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
         p {
             color: white;
             font-size: 0.7rem;

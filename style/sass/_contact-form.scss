@@ -1,3 +1,5 @@
+@import "responsive-breakpoints";
+
 .contact {
     padding: 70px 0 100px;
     .contact--container {
@@ -5,16 +7,33 @@
         display: flex;
         justify-content: space-around;
         // align-items: center;
+        @include for-tablet-landscape {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-left: 10px;
+        }
         .contact--container__text {
             width: 33%;
             display: flex;
             flex-direction: column;
             // padding: 0 5px 0 0;
+            @include for-tablet-landscape {
+                width: 85%;
+                margin-bottom: 40px;
+            }
+            @include for-tablet-portrait {
+                margin-bottom: 40px;
+                text-align: justify;
+            }
             > h2 {
                 width: 100%;
                 font-size: 2.5rem;
                 margin-bottom: 35px;
                 // margin-bottom: 15px;
+                @include for-tablet-portrait {
+                    text-align: center;
+                }
             }
             p {
                 margin: 5px 0px;
@@ -24,22 +43,40 @@
         }
         .contact--container__form {
             width: 66%;
+            @include for-tablet-landscape {
+                width: 85%;
+            }
             form {
                 width: 100%;
                 display: flex;
+                @include for-tablet-portrait {
+                    flex-direction: column;
+                }
                 .dados {
                     width: 50%;
                     margin-right: 10px;
+                    @include for-tablet-portrait {
+                        width: 100%;
+                    }
                     input {
                         width: 100%;
                         padding: 15px 10px;
                         margin-bottom: 10px;
                         border: 2px solid #ccc;
+                        @include for-tablet-portrait {
+                            margin-bottom: 15px;
+                        }
                     }  
                 }
                 .label-message {
                     width: 50%;
                     margin-bottom: 10px;
+                    @include for-tablet-portrait {
+                        width: 100%;
+                        height: 150px;
+                        // padding: 0px;
+                        margin-bottom: 15px;
+                    }
                     textarea {
                         width: 100%;
                         resize: none;

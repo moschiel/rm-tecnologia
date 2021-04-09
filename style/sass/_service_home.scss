@@ -1,20 +1,27 @@
-//porque esse estilo em todas as 'section' ???
-section {
-    display: flex;
-    padding: 50px 0;
-    flex-wrap: nowrap;
-}
+@import "responsive-breakpoints";
 
 #service {
-    .robot {
-        display: flex;
+    section.robot {
         flex-direction: row-reverse;
+    }
+    section.robot,
+    section.website {
+        padding: 50px 0;
+        display: flex;
+        flex-wrap: nowrap;
+        @include for-tablet-portrait {
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     .container-image,
     .container-text {
         width: 50%;
         padding: 0 30px 30px 30px;
+        @include for-tablet-portrait {
+            width: 100%;
+        }
     }
 
     .container-image {

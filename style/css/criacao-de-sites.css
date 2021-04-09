@@ -287,3 +287,100 @@ section.dev .cel-container .cel-image {
   z-index: 2;
   margin: 0 auto;
 }
+
+.contact {
+  padding: 70px 0 100px;
+}
+.contact .contact--container {
+  padding: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.contact .contact--container .contact--container__text {
+  width: 33%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.contact .contact--container .contact--container__text > h2 {
+  width: 100%;
+  font-size: 2.5rem;
+  margin-bottom: 35px;
+}
+.contact .contact--container .contact--container__text p {
+  margin: 5px 0px;
+  font-size: 1.2rem;
+}
+.contact .contact--container .contact--container__form {
+  width: 66%;
+}
+.contact .contact--container .contact--container__form form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.contact .contact--container .contact--container__form form .dados {
+  width: 50%;
+  margin-right: 10px;
+}
+.contact .contact--container .contact--container__form form .dados input {
+  width: 100%;
+  padding: 15px 10px;
+  margin-bottom: 10px;
+  border: 2px solid #ccc;
+}
+.contact .contact--container .contact--container__form form .label-message {
+  width: 50%;
+  margin-bottom: 10px;
+}
+.contact .contact--container .contact--container__form form .label-message textarea {
+  width: 100%;
+  resize: none;
+  height: 100%;
+  padding: 15px 10px;
+  border: 2px solid #ccc;
+}
+.contact .contact--container .contact--container__form form textarea:focus,
+.contact .contact--container .contact--container__form form input:focus,
+.contact .contact--container .contact--container__form form textarea:hover,
+.contact .contact--container .contact--container__form form input:hover {
+  border: 2px solid #703b9b;
+}
+.contact .contact--container .contact--container__form form textarea,
+.contact .contact--container .contact--container__form form input {
+  outline: none;
+}
+.contact .contact--container .contact--container__form form textarea.valid,
+.contact .contact--container .contact--container__form form input.valid {
+  border: 2px solid #703b9b;
+}
+.contact .contact--container .contact--container__form form textarea.valid,
+.contact .contact--container .contact--container__form form input.valid {
+  border: 2px solid red;
+}
+.contact .contact--container .contact--container__form .form-button {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.contact .contact--container .contact--container__form .form-button button {
+  width: 100%;
+  padding: 15px 10px;
+  border: none;
+  background-color: #472562;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+}
+.contact .contact--container .contact--container__form .form-button button:hover {
+  background-color: #703b9b;
+}

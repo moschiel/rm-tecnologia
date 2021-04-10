@@ -3,10 +3,10 @@
 @mixin getService ($rota) {
     $imgPath: "";
     @if $rota == criacao-de-sites {
-        $imgPath: "/images/desenvolver-juntos-600.jpg";
+        $imgPath: "/images/development-together.jpg";
     }
     @else {
-        $imgPath: "/images/together-600.jpg";
+        $imgPath: "/images/teamwork-edit.jpg";
     }
 
     @include mountService($imgPath);
